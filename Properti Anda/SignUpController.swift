@@ -22,8 +22,7 @@ class SignUpController: UIViewController {
     }
     
     @IBAction func goToLogin(sender: Any){
-//        self.dismiss(animated: true, completion: nil)
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func signUp(sender: Any){
