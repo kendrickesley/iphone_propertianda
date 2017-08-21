@@ -15,6 +15,11 @@
 		EE9DCFE21F483812009CA7E2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */; };
 		EEA7167E1F4A6AAC0035D829 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7167D1F4A6AAC0035D829 /* SignUpController.swift */; };
 		EEA716801F4A71290035D829 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7167F1F4A71290035D829 /* LoginController.swift */; };
+		EEA716821F4ACF330035D829 /* RootDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA716811F4ACF330035D829 /* RootDrawerController.swift */; };
+		EEA716841F4AD0120035D829 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA716831F4AD0120035D829 /* DrawerViewController.swift */; };
+		EEA716861F4AD12D0035D829 /* AppNavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA716851F4AD12D0035D829 /* AppNavigationDrawerController.swift */; };
+		EEA7168A1F4AD8620035D829 /* DrawerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA716891F4AD8620035D829 /* DrawerData.swift */; };
+		EEA7168C1F4AED2C0035D829 /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7168B1F4AED2C0035D829 /* DrawerCell.swift */; };
 		EEC773501F48132300B22C15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC7734F1F48132300B22C15 /* AppDelegate.swift */; };
 		EEC773521F48132300B22C15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC773511F48132300B22C15 /* ViewController.swift */; };
 		EEC773551F48132300B22C15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC773531F48132300B22C15 /* Main.storyboard */; };
@@ -56,6 +61,11 @@
 		EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		EEA7167D1F4A6AAC0035D829 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		EEA7167F1F4A71290035D829 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EEA716811F4ACF330035D829 /* RootDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDrawerController.swift; sourceTree = "<group>"; };
+		EEA716831F4AD0120035D829 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		EEA716851F4AD12D0035D829 /* AppNavigationDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationDrawerController.swift; sourceTree = "<group>"; };
+		EEA716891F4AD8620035D829 /* DrawerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerData.swift; sourceTree = "<group>"; };
+		EEA7168B1F4AED2C0035D829 /* DrawerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
 		EEC7734C1F48132300B22C15 /* Properti Anda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Properti Anda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC7734F1F48132300B22C15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEC773511F48132300B22C15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +171,11 @@
 				EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */,
 				EEA7167D1F4A6AAC0035D829 /* SignUpController.swift */,
 				EEA7167F1F4A71290035D829 /* LoginController.swift */,
+				EEA716811F4ACF330035D829 /* RootDrawerController.swift */,
+				EEA716831F4AD0120035D829 /* DrawerViewController.swift */,
+				EEA716851F4AD12D0035D829 /* AppNavigationDrawerController.swift */,
+				EEA716891F4AD8620035D829 /* DrawerData.swift */,
+				EEA7168B1F4AED2C0035D829 /* DrawerCell.swift */,
 			);
 			path = "Properti Anda";
 			sourceTree = "<group>";
@@ -482,9 +497,14 @@
 				EEC773521F48132300B22C15 /* ViewController.swift in Sources */,
 				EE9DCFE01F4836E2009CA7E2 /* IntroPageController.swift in Sources */,
 				EEA7167E1F4A6AAC0035D829 /* SignUpController.swift in Sources */,
+				EEA716821F4ACF330035D829 /* RootDrawerController.swift in Sources */,
+				EEA716861F4AD12D0035D829 /* AppNavigationDrawerController.swift in Sources */,
 				EEC773501F48132300B22C15 /* AppDelegate.swift in Sources */,
+				EEA7168A1F4AD8620035D829 /* DrawerData.swift in Sources */,
 				EE9DCFE21F483812009CA7E2 /* IntroViewController.swift in Sources */,
 				EEA716801F4A71290035D829 /* LoginController.swift in Sources */,
+				EEA716841F4AD0120035D829 /* DrawerViewController.swift in Sources */,
+				EEA7168C1F4AED2C0035D829 /* DrawerCell.swift in Sources */,
 				EE9DCFD81F4820FE009CA7E2 /* RootViewController.swift in Sources */,
 				EEC773581F48132300B22C15 /* Properti_Anda.xcdatamodeld in Sources */,
 			);
