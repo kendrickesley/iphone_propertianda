@@ -25,9 +25,6 @@ class DrawerViewController: UIViewController {
         drawerTableViewHeightConstraint.constant = drawerTableView.contentSize.height
     }
     
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        drawerTableViewHeightConstraint.constant = drawerTableView.contentSize.height
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

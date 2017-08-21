@@ -64,22 +64,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="8ic-z3-Coi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="360" id="Ay8-qI-G0K">
                                         <variation key="heightClass=compact-widthClass=regular" constant="100"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" secondItem="8ic-z3-Coi" secondAttribute="height" multiplier="16:9" id="Nhr-wJ-DsZ">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                                    </constraint>
                                     <constraint firstAttribute="height" constant="233" id="bEV-zx-zBv">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="260"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="270"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Ay8-qI-G0K"/>
-                                        <exclude reference="Nhr-wJ-DsZ"/>
                                         <exclude reference="bEV-zx-zBv"/>
                                     </mask>
                                 </variation>
@@ -90,19 +86,15 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="Nhr-wJ-DsZ"/>
                                         <include reference="bEV-zx-zBv"/>
                                     </mask>
                                 </variation>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgp-YW-oBG">
-                                <rect key="frame" x="0.0" y="260" width="414" height="476"/>
+                                <rect key="frame" x="0.0" y="270" width="414" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="476" id="30U-Ft-oOD"/>
-                                    <constraint firstAttribute="height" constant="476" id="Sxo-rP-R8X">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="400"/>
-                                    </constraint>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrawerCell" textLabel="bSE-la-bKZ" style="IBUITableViewCellStyleDefault" id="6wc-g0-AKn" customClass="DrawerCell" customModule="Properti_Anda">
@@ -128,12 +120,6 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="30U-Ft-oOD"/>
-                                        <exclude reference="Sxo-rP-R8X"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="Sxo-rP-R8X"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -143,7 +129,7 @@
                                 </variation>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyW-LI-KC6">
-                                <rect key="frame" x="20" y="177" width="414" height="58.333333333333343"/>
+                                <rect key="frame" x="20" y="187" width="414" height="58.333333333333343"/>
                                 <string key="text">Welcome, 
 Kendrick Kesley</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
@@ -151,7 +137,7 @@ Kendrick Kesley</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozk-jJ-zhL" customClass="IconButton" customModule="Material">
-                                <rect key="frame" x="339" y="25" width="55" height="30"/>
+                                <rect key="frame" x="334" y="25" width="55" height="30"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" red="1" green="0.23779302848616846" blue="0.25768987434600776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -180,9 +166,10 @@ Kendrick Kesley</string>
                             <constraint firstItem="vPu-ci-hKd" firstAttribute="top" secondItem="lgp-YW-oBG" secondAttribute="bottom" constant="340" id="9zE-4Z-Y7i">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="ozk-jJ-zhL" secondAttribute="trailing" id="AZV-B6-OiZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ozk-jJ-zhL" secondAttribute="trailing" constant="5" id="AZV-B6-OiZ"/>
                             <constraint firstItem="iyW-LI-KC6" firstAttribute="width" secondItem="8ic-z3-Coi" secondAttribute="width" id="Azd-Qs-b6G"/>
                             <constraint firstItem="ozk-jJ-zhL" firstAttribute="baseline" secondItem="iyW-LI-KC6" secondAttribute="baseline" id="BvG-ek-GS0"/>
+                            <constraint firstItem="vPu-ci-hKd" firstAttribute="top" secondItem="lgp-YW-oBG" secondAttribute="bottom" id="Emc-dh-6la"/>
                             <constraint firstItem="iyW-LI-KC6" firstAttribute="leading" secondItem="8ic-z3-Coi" secondAttribute="leading" id="M4u-UK-9OH">
                                 <variation key="heightClass=compact-widthClass=regular" constant="20"/>
                             </constraint>
@@ -233,6 +220,11 @@ Kendrick Kesley</string>
                                 <exclude reference="o6k-Oq-SAk"/>
                                 <exclude reference="qNk-h7-32H"/>
                                 <exclude reference="wWH-oL-V5l"/>
+                                <exclude reference="4vv-CW-s1Z"/>
+                                <exclude reference="Azd-Qs-b6G"/>
+                                <exclude reference="M4u-UK-9OH"/>
+                                <exclude reference="PXa-uO-SJQ"/>
+                                <exclude reference="nII-du-6JC"/>
                                 <exclude reference="88t-Jg-to6"/>
                                 <exclude reference="QsB-Lm-w1A"/>
                                 <exclude reference="WLB-hW-QZv"/>
@@ -240,12 +232,8 @@ Kendrick Kesley</string>
                                 <exclude reference="c8i-My-bQ9"/>
                                 <exclude reference="jDr-YD-aUh"/>
                                 <exclude reference="wja-xG-LXV"/>
-                                <exclude reference="4vv-CW-s1Z"/>
-                                <exclude reference="Azd-Qs-b6G"/>
-                                <exclude reference="M4u-UK-9OH"/>
-                                <exclude reference="PXa-uO-SJQ"/>
-                                <exclude reference="nII-du-6JC"/>
                                 <exclude reference="9zE-4Z-Y7i"/>
+                                <exclude reference="Emc-dh-6la"/>
                                 <exclude reference="AZV-B6-OiZ"/>
                                 <exclude reference="BvG-ek-GS0"/>
                                 <exclude reference="R3H-OP-6Tl"/>
@@ -264,12 +252,13 @@ Kendrick Kesley</string>
                                 <include reference="9kG-oK-7e0"/>
                                 <include reference="bbk-kN-IJa"/>
                                 <include reference="fja-XG-nhk"/>
+                                <include reference="M4u-UK-9OH"/>
+                                <include reference="nII-du-6JC"/>
                                 <include reference="88t-Jg-to6"/>
                                 <exclude reference="QsB-Lm-w1A"/>
                                 <include reference="WLB-hW-QZv"/>
                                 <include reference="c8i-My-bQ9"/>
-                                <include reference="M4u-UK-9OH"/>
-                                <include reference="nII-du-6JC"/>
+                                <include reference="Emc-dh-6la"/>
                                 <include reference="Ry0-Tr-TaU"/>
                                 <include reference="fll-d6-j2x"/>
                             </mask>
@@ -285,12 +274,12 @@ Kendrick Kesley</string>
                                 <include reference="o6k-Oq-SAk"/>
                                 <include reference="qNk-h7-32H"/>
                                 <include reference="wWH-oL-V5l"/>
-                                <include reference="Zvr-QW-7DK"/>
-                                <include reference="jDr-YD-aUh"/>
-                                <include reference="wja-xG-LXV"/>
                                 <include reference="4vv-CW-s1Z"/>
                                 <include reference="Azd-Qs-b6G"/>
                                 <include reference="PXa-uO-SJQ"/>
+                                <include reference="Zvr-QW-7DK"/>
+                                <include reference="jDr-YD-aUh"/>
+                                <include reference="wja-xG-LXV"/>
                                 <exclude reference="9zE-4Z-Y7i"/>
                                 <include reference="AZV-B6-OiZ"/>
                                 <exclude reference="BvG-ek-GS0"/>
@@ -1167,7 +1156,7 @@ Anda</string>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-DF-4B4">
-                                <rect key="frame" x="-0.66666666666665719" y="270" width="414.33333333333337" height="1"/>
+                                <rect key="frame" x="0.0" y="270" width="414.33333333333331" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="jTa-ji-fk7"/>
@@ -1300,12 +1289,12 @@ Anda</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="BLO-kJ-SKV"/>
-                                <exclude reference="cnN-6k-zcH"/>
                                 <exclude reference="9Ik-gr-S4G"/>
                                 <exclude reference="KtP-Xn-EYd"/>
                                 <exclude reference="LCk-sM-RVM"/>
                                 <exclude reference="cQR-eR-Wz3"/>
+                                <exclude reference="BLO-kJ-SKV"/>
+                                <exclude reference="cnN-6k-zcH"/>
                                 <exclude reference="8nH-7K-XOH"/>
                                 <exclude reference="Cb7-HU-TRu"/>
                                 <exclude reference="EQG-Hy-LYG"/>
@@ -1328,9 +1317,9 @@ Anda</string>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="BLO-kJ-SKV"/>
                                 <include reference="9Ik-gr-S4G"/>
                                 <include reference="LCk-sM-RVM"/>
+                                <include reference="BLO-kJ-SKV"/>
                                 <include reference="8nH-7K-XOH"/>
                                 <include reference="EQG-Hy-LYG"/>
                                 <include reference="gv2-Bz-K3z"/>
@@ -1344,17 +1333,17 @@ Anda</string>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="cnN-6k-zcH"/>
                                 <include reference="KtP-Xn-EYd"/>
                                 <include reference="cQR-eR-Wz3"/>
+                                <include reference="3Kg-93-sLB"/>
+                                <include reference="tTf-ro-aHE"/>
+                                <include reference="cnN-6k-zcH"/>
                                 <include reference="Cb7-HU-TRu"/>
                                 <include reference="dKg-DD-Ohc"/>
                                 <include reference="xYM-y7-o5Z"/>
                                 <include reference="686-GJ-tVy"/>
                                 <include reference="TvI-gn-NA4"/>
                                 <include reference="woV-eY-htF"/>
-                                <include reference="3Kg-93-sLB"/>
-                                <include reference="tTf-ro-aHE"/>
                                 <include reference="1kK-BO-AP7"/>
                                 <include reference="MUP-7X-skq"/>
                                 <include reference="Smy-ri-Tja"/>
@@ -1385,7 +1374,7 @@ Anda</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xND-td-9eK">
-                                <rect key="frame" x="0.33333333333334281" y="43" width="414" height="35"/>
+                                <rect key="frame" x="-0.33333333333334281" y="43" width="414" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1564,13 +1553,13 @@ Anda</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e7-Lm-rsV">
-                                <rect key="frame" x="199.33333333333337" y="599" width="16.666666666666657" height="17.666666666666629"/>
+                                <rect key="frame" x="199.66666666666666" y="599" width="16.666666666666686" height="17.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-by-yhh" customClass="FlatButton" customModule="Material">
-                                <rect key="frame" x="189" y="626.66666666666663" width="38" height="30"/>
+                                <rect key="frame" x="189.33333333333334" y="626.66666666666663" width="38" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1679,6 +1668,11 @@ Anda</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="DeC-QY-EfF"/>
+                                <exclude reference="JYi-2l-5gg"/>
+                                <exclude reference="ObA-4y-ora"/>
+                                <exclude reference="dnq-aT-0uo"/>
+                                <exclude reference="qKj-QO-md0"/>
                                 <exclude reference="3Zi-GJ-nKc"/>
                                 <exclude reference="T0v-Vl-3H3"/>
                                 <exclude reference="hWO-cP-460"/>
@@ -1692,11 +1686,6 @@ Anda</string>
                                 <exclude reference="nN0-Bh-Imm"/>
                                 <exclude reference="pa4-Ef-Ut0"/>
                                 <exclude reference="pgk-Dl-sfa"/>
-                                <exclude reference="DeC-QY-EfF"/>
-                                <exclude reference="JYi-2l-5gg"/>
-                                <exclude reference="ObA-4y-ora"/>
-                                <exclude reference="dnq-aT-0uo"/>
-                                <exclude reference="qKj-QO-md0"/>
                                 <exclude reference="GP5-ua-XWR"/>
                                 <exclude reference="bgg-ec-6qS"/>
                                 <exclude reference="dJh-zl-vKE"/>
@@ -1743,6 +1732,8 @@ Anda</string>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="JYi-2l-5gg"/>
+                                <include reference="ObA-4y-ora"/>
                                 <include reference="hWO-cP-460"/>
                                 <exclude reference="hyw-xR-zdc"/>
                                 <exclude reference="sAm-xU-cGp"/>
@@ -1750,8 +1741,6 @@ Anda</string>
                                 <include reference="WRZ-gg-14F"/>
                                 <include reference="nN0-Bh-Imm"/>
                                 <include reference="pa4-Ef-Ut0"/>
-                                <include reference="JYi-2l-5gg"/>
-                                <include reference="ObA-4y-ora"/>
                                 <include reference="dJh-zl-vKE"/>
                                 <exclude reference="lUz-pg-2Es"/>
                                 <exclude reference="pRo-Qg-uNQ"/>
@@ -1779,15 +1768,15 @@ Anda</string>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="DeC-QY-EfF"/>
+                                <include reference="dnq-aT-0uo"/>
+                                <include reference="qKj-QO-md0"/>
                                 <include reference="3Zi-GJ-nKc"/>
                                 <include reference="T0v-Vl-3H3"/>
                                 <include reference="kYH-Or-laU"/>
                                 <include reference="7rL-Hg-wfK"/>
                                 <include reference="9ZY-ka-Gzl"/>
                                 <include reference="pgk-Dl-sfa"/>
-                                <include reference="DeC-QY-EfF"/>
-                                <include reference="dnq-aT-0uo"/>
-                                <include reference="qKj-QO-md0"/>
                                 <include reference="GP5-ua-XWR"/>
                                 <include reference="bgg-ec-6qS"/>
                                 <include reference="uW2-78-dFL"/>
