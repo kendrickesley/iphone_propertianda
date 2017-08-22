@@ -13,10 +13,10 @@ import Material
 class DrawerData{
     private var data:[Drawer] = []
     init(){
-        self.data.append(Drawer(title: "Home", icon: Icon.home!))
-        self.data.append(Drawer(title: "Dashboard", icon: Icon.work!))
-        self.data.append(Drawer(title: "Portfolio", icon: Icon.place!))
-        self.data.append(Drawer(title: "Preferences", icon: Icon.settings!))
+        self.data.append(Drawer(title: "Home", icon: Icon.home!, key: "home"))
+        self.data.append(Drawer(title: "Dashboard", icon: Icon.work!, key: "dashboard"))
+        self.data.append(Drawer(title: "Portfolio", icon: Icon.place!, key: "portfolio"))
+        self.data.append(Drawer(title: "Preferences", icon: Icon.settings!, key: "preferences"))
     }
     
     public func getAllData() -> [Drawer]{
@@ -30,10 +30,12 @@ class DrawerData{
 class Drawer{
     private var title:String = ""
     private var icon:UIImage
+    private var key:String = ""
     
-    init(title:String, icon:UIImage){
+    init(title:String, icon:UIImage, key:String){
         self.title = title
         self.icon = icon
+        self.key = key
     }
     
     public func getName()->String{
@@ -41,5 +43,8 @@ class Drawer{
     }
     public func getIcon()->UIImage{
         return self.icon
+    }
+    public func getKey()->String{
+        return self.key
     }
 }

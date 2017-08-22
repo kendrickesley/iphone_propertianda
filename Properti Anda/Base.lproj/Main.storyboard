@@ -6,8 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="-3007" y="-1078"/>
         </scene>
-        <!--Root Drawer Controller-->
+        <!--Property List View Controller-->
         <scene sceneID="tFg-wE-poR">
             <objects>
-                <viewController storyboardIdentifier="RootDrawerController" id="qNX-oX-Mg7" customClass="RootDrawerController" customModule="Properti_Anda" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PropertyListViewController" id="qNX-oX-Mg7" customClass="PropertyListViewController" customModule="Properti_Anda" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QJa-Oc-0sn"/>
                         <viewControllerLayoutGuide type="bottom" id="g4i-dU-TSx"/>
@@ -44,12 +46,211 @@
                     <view key="view" contentMode="scaleToFill" id="Px1-t9-iF3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="425" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8qa-6J-48Q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="none" indentationWidth="10" reuseIdentifier="PropertyCell" id="hpn-dU-5SO" customClass="PropertyCell" customModule="Properti_Anda">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="425"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hpn-dU-5SO" id="frY-lU-FER">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC0-zl-S58" customClass="Card" customModule="Material">
+                                                    <rect key="frame" x="0.0" y="-42" width="414" height="467"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-8W-dLL">
+                                                            <rect key="frame" x="0.0" y="-150" width="414" height="150"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="150" id="JSk-VU-lpU"/>
+                                                            </constraints>
+                                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jl Kebon Kacang 12 No 39 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8l-jf-Ln6">
+                                                            <rect key="frame" x="5" y="50" width="219.66666666666666" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBP-ee-Ftt">
+                                                            <rect key="frame" x="5" y="78" width="38" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of $1,000,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a30-9d-cAM">
+                                                            <rect key="frame" x="5" y="99" width="110.33333333333333" height="16.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igb-dX-Wsq" customClass="Bar" customModule="Material">
+                                                            <rect key="frame" x="0.0" y="145.33333333333331" width="414" height="30"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFq-a8-QMJ" customClass="FlatButton" customModule="Material">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="207.33333333333334" height="30.000000000000014"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                                                            <color key="value" red="0.5134342757" green="0.79035783680000005" blue="0.45817661630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="pulseOpacity">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="kFq-a8-QMJ" firstAttribute="width" secondItem="igb-dX-Wsq" secondAttribute="width" multiplier="0.5" id="KSN-St-fbn"/>
+                                                                <constraint firstItem="kFq-a8-QMJ" firstAttribute="centerY" secondItem="igb-dX-Wsq" secondAttribute="centerY" id="Wfp-fn-Ssf"/>
+                                                                <constraint firstItem="kFq-a8-QMJ" firstAttribute="leading" secondItem="igb-dX-Wsq" secondAttribute="leading" id="Y3v-kH-vGv"/>
+                                                                <constraint firstItem="kFq-a8-QMJ" firstAttribute="height" secondItem="igb-dX-Wsq" secondAttribute="height" id="hjn-yQ-GIg"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="igb-dX-Wsq" firstAttribute="width" secondItem="gC0-zl-S58" secondAttribute="width" id="1AK-11-cEN"/>
+                                                        <constraint firstItem="a30-9d-cAM" firstAttribute="top" secondItem="bBP-ee-Ftt" secondAttribute="bottom" constant="1" id="5v1-2D-uGz"/>
+                                                        <constraint firstItem="F8l-jf-Ln6" firstAttribute="leading" secondItem="gC0-zl-S58" secondAttribute="leading" constant="5" id="AX5-re-0Mr"/>
+                                                        <constraint firstItem="ddw-8W-dLL" firstAttribute="leading" secondItem="gC0-zl-S58" secondAttribute="leading" id="Gcq-NU-7fc"/>
+                                                        <constraint firstItem="igb-dX-Wsq" firstAttribute="centerX" secondItem="gC0-zl-S58" secondAttribute="centerX" id="NEV-df-2D4"/>
+                                                        <constraint firstItem="bBP-ee-Ftt" firstAttribute="top" secondItem="F8l-jf-Ln6" secondAttribute="bottom" constant="8" id="UcE-m7-f8s"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ddw-8W-dLL" secondAttribute="trailing" id="brw-6x-pve"/>
+                                                        <constraint firstItem="a30-9d-cAM" firstAttribute="leading" secondItem="gC0-zl-S58" secondAttribute="leading" constant="5" id="csH-Xa-Ths"/>
+                                                        <constraint firstItem="ddw-8W-dLL" firstAttribute="top" secondItem="gC0-zl-S58" secondAttribute="top" constant="-150" id="eHo-sj-bQ4"/>
+                                                        <constraint firstItem="bBP-ee-Ftt" firstAttribute="leading" secondItem="gC0-zl-S58" secondAttribute="leading" constant="5" id="r0G-vm-hus"/>
+                                                        <constraint firstItem="F8l-jf-Ln6" firstAttribute="top" secondItem="ddw-8W-dLL" secondAttribute="bottom" constant="50" id="xbZ-8w-gA2"/>
+                                                        <constraint firstItem="igb-dX-Wsq" firstAttribute="top" secondItem="a30-9d-cAM" secondAttribute="bottom" constant="30" id="xqo-aS-EzV"/>
+                                                    </constraints>
+                                                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="contentsGravity" value="10"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gC0-zl-S58" firstAttribute="leading" secondItem="frY-lU-FER" secondAttribute="leadingMargin" constant="-8" id="R9c-1C-pQx"/>
+                                                <constraint firstItem="gC0-zl-S58" firstAttribute="centerX" secondItem="frY-lU-FER" secondAttribute="centerX" id="UyO-EM-lSR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gC0-zl-S58" secondAttribute="bottom" constant="-8" id="ig3-q9-2bw"/>
+                                                <constraint firstItem="gC0-zl-S58" firstAttribute="top" secondItem="frY-lU-FER" secondAttribute="topMargin" constant="-50" id="sXc-x8-PBB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gC0-zl-S58" secondAttribute="trailing" constant="-8" id="tky-Wv-uDd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="F8l-jf-Ln6" id="7RA-9M-7yo"/>
+                                            <outlet property="investButton" destination="kFq-a8-QMJ" id="9ci-ps-a04"/>
+                                            <outlet property="priceLabel" destination="a30-9d-cAM" id="kST-J5-pox"/>
+                                            <outlet property="progressPriceLabel" destination="bBP-ee-Ftt" id="qah-kN-Ydg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="zPosition">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8qa-6J-48Q" firstAttribute="height" secondItem="Px1-t9-iF3" secondAttribute="height" id="9HV-P5-VFC"/>
+                            <constraint firstItem="8qa-6J-48Q" firstAttribute="centerY" secondItem="Px1-t9-iF3" secondAttribute="centerY" id="C03-0H-IXl"/>
+                            <constraint firstItem="8qa-6J-48Q" firstAttribute="centerX" secondItem="Px1-t9-iF3" secondAttribute="centerX" id="M7o-mp-fKt"/>
+                            <constraint firstItem="8qa-6J-48Q" firstAttribute="width" secondItem="Px1-t9-iF3" secondAttribute="width" id="OUf-pa-6F1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FMG-t5-agf"/>
+                    <connections>
+                        <outlet property="propertyTableView" destination="8qa-6J-48Q" id="vN5-ef-WJ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIz-Lx-UMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1425" y="-699"/>
+            <point key="canvasLocation" x="-543.47826086956525" y="-536.41304347826087"/>
+        </scene>
+        <!--Property Detail View Controller-->
+        <scene sceneID="Lgb-nj-QDu">
+            <objects>
+                <viewController storyboardIdentifier="PropertyDetailViewController" id="mGI-6X-DeF" customClass="PropertyDetailViewController" customModule="Properti_Anda" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dON-s9-nLg"/>
+                        <viewControllerLayoutGuide type="bottom" id="xfp-fR-xq6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ux8-JI-ckq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.5384735424" green="1" blue="0.51514094509999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVM-AZ-kjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1307" y="133"/>
+        </scene>
+        <!--App Navigation Controller-->
+        <scene sceneID="xXx-Gz-ErT">
+            <objects>
+                <navigationController id="Zzf-fh-doz" customClass="AppNavigationController" customModule="Properti_Anda" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2uz-gm-CPF" customClass="NavigationBar" customModule="Material">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qNX-oX-Mg7" kind="relationship" relationship="rootViewController" id="ZdR-Oo-o1u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wf1-uY-XmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1306" y="-536"/>
+        </scene>
+        <!--Property Split View Controller-->
+        <scene sceneID="yfd-Gi-2de">
+            <objects>
+                <splitViewController storyboardIdentifier="PropertySplitViewController" id="3dU-z4-wws" customClass="PropertySplitViewController" customModule="Properti_Anda" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Zzf-fh-doz" kind="relationship" relationship="masterViewController" id="rAi-eG-0Bo"/>
+                        <segue destination="mGI-6X-DeF" kind="relationship" relationship="detailViewController" id="JUd-Pg-lR2"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVx-b4-vba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2123" y="-255"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="fwe-UU-Qeh">
+            <objects>
+                <tableViewController storyboardIdentifier="PreferencesViewController" id="0Nb-u5-9lE" customClass="PreferencesViewController" customModule="Properti_Anda" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7N4-iT-Nz7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ztB-0P-6Ib">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztB-0P-6Ib" id="jtY-Sm-LGf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Nb-u5-9lE" id="C2G-Zd-KUd"/>
+                            <outlet property="delegate" destination="0Nb-u5-9lE" id="ZrT-Ef-YiU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al3-hI-Qdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2219" y="435"/>
         </scene>
         <!--Drawer View Controller-->
         <scene sceneID="oAR-De-Cbv">
@@ -214,17 +415,24 @@ Kendrick Kesley</string>
                                 <exclude reference="ozk-jJ-zhL"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9zE-4Z-Y7i"/>
+                                <exclude reference="Emc-dh-6la"/>
+                                <exclude reference="4vv-CW-s1Z"/>
+                                <exclude reference="Azd-Qs-b6G"/>
+                                <exclude reference="M4u-UK-9OH"/>
+                                <exclude reference="PXa-uO-SJQ"/>
+                                <exclude reference="nII-du-6JC"/>
                                 <exclude reference="9kG-oK-7e0"/>
                                 <exclude reference="bbk-kN-IJa"/>
                                 <exclude reference="fja-XG-nhk"/>
                                 <exclude reference="o6k-Oq-SAk"/>
                                 <exclude reference="qNk-h7-32H"/>
                                 <exclude reference="wWH-oL-V5l"/>
-                                <exclude reference="4vv-CW-s1Z"/>
-                                <exclude reference="Azd-Qs-b6G"/>
-                                <exclude reference="M4u-UK-9OH"/>
-                                <exclude reference="PXa-uO-SJQ"/>
-                                <exclude reference="nII-du-6JC"/>
+                                <exclude reference="AZV-B6-OiZ"/>
+                                <exclude reference="BvG-ek-GS0"/>
+                                <exclude reference="R3H-OP-6Tl"/>
+                                <exclude reference="Ry0-Tr-TaU"/>
+                                <exclude reference="fll-d6-j2x"/>
                                 <exclude reference="88t-Jg-to6"/>
                                 <exclude reference="QsB-Lm-w1A"/>
                                 <exclude reference="WLB-hW-QZv"/>
@@ -232,13 +440,6 @@ Kendrick Kesley</string>
                                 <exclude reference="c8i-My-bQ9"/>
                                 <exclude reference="jDr-YD-aUh"/>
                                 <exclude reference="wja-xG-LXV"/>
-                                <exclude reference="9zE-4Z-Y7i"/>
-                                <exclude reference="Emc-dh-6la"/>
-                                <exclude reference="AZV-B6-OiZ"/>
-                                <exclude reference="BvG-ek-GS0"/>
-                                <exclude reference="R3H-OP-6Tl"/>
-                                <exclude reference="Ry0-Tr-TaU"/>
-                                <exclude reference="fll-d6-j2x"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -249,18 +450,18 @@ Kendrick Kesley</string>
                                 <include reference="ozk-jJ-zhL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Emc-dh-6la"/>
+                                <include reference="M4u-UK-9OH"/>
+                                <include reference="nII-du-6JC"/>
                                 <include reference="9kG-oK-7e0"/>
                                 <include reference="bbk-kN-IJa"/>
                                 <include reference="fja-XG-nhk"/>
-                                <include reference="M4u-UK-9OH"/>
-                                <include reference="nII-du-6JC"/>
+                                <include reference="Ry0-Tr-TaU"/>
+                                <include reference="fll-d6-j2x"/>
                                 <include reference="88t-Jg-to6"/>
                                 <exclude reference="QsB-Lm-w1A"/>
                                 <include reference="WLB-hW-QZv"/>
                                 <include reference="c8i-My-bQ9"/>
-                                <include reference="Emc-dh-6la"/>
-                                <include reference="Ry0-Tr-TaU"/>
-                                <include reference="fll-d6-j2x"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -271,19 +472,19 @@ Kendrick Kesley</string>
                                 <include reference="ozk-jJ-zhL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="o6k-Oq-SAk"/>
-                                <include reference="qNk-h7-32H"/>
-                                <include reference="wWH-oL-V5l"/>
+                                <exclude reference="9zE-4Z-Y7i"/>
                                 <include reference="4vv-CW-s1Z"/>
                                 <include reference="Azd-Qs-b6G"/>
                                 <include reference="PXa-uO-SJQ"/>
-                                <include reference="Zvr-QW-7DK"/>
-                                <include reference="jDr-YD-aUh"/>
-                                <include reference="wja-xG-LXV"/>
-                                <exclude reference="9zE-4Z-Y7i"/>
+                                <include reference="o6k-Oq-SAk"/>
+                                <include reference="qNk-h7-32H"/>
+                                <include reference="wWH-oL-V5l"/>
                                 <include reference="AZV-B6-OiZ"/>
                                 <exclude reference="BvG-ek-GS0"/>
                                 <include reference="R3H-OP-6Tl"/>
+                                <include reference="Zvr-QW-7DK"/>
+                                <include reference="jDr-YD-aUh"/>
+                                <include reference="wja-xG-LXV"/>
                             </mask>
                         </variation>
                     </view>
@@ -294,7 +495,7 @@ Kendrick Kesley</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEh-4U-Z4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704.34782608695662" y="-699.45652173913049"/>
+            <point key="canvasLocation" x="-3006" y="-255"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="hvW-Bs-4l6">
@@ -1553,13 +1754,13 @@ Anda</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e7-Lm-rsV">
-                                <rect key="frame" x="199.66666666666666" y="599" width="16.666666666666686" height="17.666666666666629"/>
+                                <rect key="frame" x="198.66666666666666" y="599" width="16.666666666666686" height="17.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-by-yhh" customClass="FlatButton" customModule="Material">
-                                <rect key="frame" x="189.33333333333334" y="626.66666666666663" width="38" height="30"/>
+                                <rect key="frame" x="188.33333333333334" y="626.66666666666663" width="38" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

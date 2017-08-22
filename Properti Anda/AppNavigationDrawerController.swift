@@ -15,8 +15,14 @@ class AppNavigationDrawerController: NavigationDrawerController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

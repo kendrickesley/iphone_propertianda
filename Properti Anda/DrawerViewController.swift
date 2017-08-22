@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Material
 
 class DrawerViewController: UIViewController {
 
     @IBOutlet weak var drawerTableView:UITableView!
     @IBOutlet weak var drawerTableViewHeightConstraint:NSLayoutConstraint!
     let drawers:DrawerData = DrawerData()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         drawerTableView.delegate = self
@@ -57,6 +60,49 @@ extension DrawerViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrawerCell")!
         cell.textLabel?.text = self.drawers.getData(byIndex: indexPath.row).getName()
         cell.imageView?.image = self.drawers.getData(byIndex: indexPath.row).getIcon()
+        if indexPath.item == 0 {
+            cell.imageView?.tintColor = Color.green.base
+            cell.setSelected(true, animated: false)
+            cell.backgroundColor = Color.grey.lighten2
+        }else{
+            cell.imageView?.tintColor = Color.grey.base
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = self.drawers.getData(byIndex: indexPath.row).getKey()
+        for cell:DrawerCell in tableView.visibleCells as! [DrawerCell] {
+            cell.imageView?.tintColor = Color.grey.base
+            cell.backgroundColor = Color.white
+        }
+        tableView.cellForRow(at: indexPath)!.imageView?.tintColor = Color.green.base
+        tableView.cellForRow(at: indexPath)!.backgroundColor = Color.grey.lighten2
+        if section == "home"{
+            handleHomeButton()
+        }else if section == "preferences"{
+            handlePreferencesButton()
+        }
+        
+
+    }
+}
+
+extension DrawerViewController {
+    
+    @objc
+    fileprivate func handleHomeButton() {
+//        toolbarController?.transition(to: appDelegate.propertySplitViewController, completion: closeNavigationDrawer)
+        navigationDrawerController?.transition(to: appDelegate.propertySplitViewController, completion: closeNavigationDrawer)
+    }
+    
+    @objc
+    fileprivate func handlePreferencesButton(){
+//        toolbarController?.transition(to: appDelegate.preferencesViewController, completion: closeNavigationDrawer)
+        navigationDrawerController?.transition(to: appDelegate.preferencesViewController, completion: closeNavigationDrawer)
+    }
+    
+    fileprivate func closeNavigationDrawer(result: Bool) {
+        navigationDrawerController?.closeLeftView()
     }
 }

@@ -1,18 +1,21 @@
 //
-//  RootDrawerController.swift
+//  PropertySplitViewController.swift
 //  Properti Anda
 //
-//  Created by Kendrick on 21/8/17.
+//  Created by Kendrick on 22/8/17.
 //  Copyright © 2017 Kendrick. All rights reserved.
 //
 
 import UIKit
+import Material
 
-class RootDrawerController: UIViewController {
-
+class PropertySplitViewController: UISplitViewController, UISplitViewControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareToolbar()
+        self.delegate = self
+        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,9 @@ class RootDrawerController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
 
     /*
     // MARK: - Navigation
@@ -30,16 +36,6 @@ class RootDrawerController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
-extension RootDrawerController {
-    fileprivate func prepareToolbar() {
-        guard let tc = toolbarController else {
-            return
-        }
-        
-        tc.toolbar.title = "Properties"
-        tc.toolbar.detail = "Extends your portfolio"
-    }
-}
+

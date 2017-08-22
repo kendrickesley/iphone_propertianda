@@ -10,10 +10,36 @@ import UIKit
 import CoreData
 import Material
 
+extension UIStoryboard {
+    class func viewController(identifier: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    public lazy var propertySplitViewController: PropertySplitViewController = {
+        return UIStoryboard.viewController(identifier: "PropertySplitViewController") as! PropertySplitViewController
+    }()
+    
+    public lazy var drawerViewController: DrawerViewController = {
+        return UIStoryboard.viewController(identifier: "DrawerViewController") as! DrawerViewController
+    }()
+    
+    public lazy var rootIntroController: RootViewController = {
+        return UIStoryboard.viewController(identifier: "RootViewController") as! RootViewController
+    }()
+    
+    public lazy var propertyListViewController: PropertyListViewController = {
+        return UIStoryboard.viewController(identifier: "PropertyListViewController") as! PropertyListViewController
+    }()
+    
+    public lazy var preferencesViewController: PreferencesViewController = {
+        return UIStoryboard.viewController(identifier: "PreferencesViewController") as! PreferencesViewController
+    }()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

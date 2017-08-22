@@ -1,23 +1,37 @@
 //
-//  RootDrawerController.swift
+//  PropertyDetailViewController.swift
 //  Properti Anda
 //
-//  Created by Kendrick on 21/8/17.
+//  Created by Kendrick on 22/8/17.
 //  Copyright © 2017 Kendrick. All rights reserved.
 //
 
 import UIKit
+import Material
 
-class RootDrawerController: UIViewController {
+class PropertyDetailViewController: UIViewController {
 
+    public var detailInfo:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareToolbar()
+        prepareNavigationBar()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func prepareNavigationBar(){
+        navigationItem.title = "Property Detail"
+        navigationItem.detail = "Address of Given Property"
+        navigationItem.titleLabel.textColor = Color.white
+        navigationItem.detailLabel.textColor = Color.white
+        navigationItem.backBarButtonItem?.tintColor = Color.white
+        navigationItem.backButton.tintColor = Color.white
     }
     
 
@@ -31,15 +45,4 @@ class RootDrawerController: UIViewController {
     }
     */
 
-}
-
-extension RootDrawerController {
-    fileprivate func prepareToolbar() {
-        guard let tc = toolbarController else {
-            return
-        }
-        
-        tc.toolbar.title = "Properties"
-        tc.toolbar.detail = "Extends your portfolio"
-    }
 }
