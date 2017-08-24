@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/kendrick/Documents/Iphone Programming Lab/Properti Anda/Properti Anda/build/Debug-iphoneos/Material/Material.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/kendrick/Documents/Iphone Programming Lab/Properti Anda/Properti Anda/build/Pods.build/Debug-iphoneos/Material.build/unextended-module.modulemap',
+    }]
+  }]
+}

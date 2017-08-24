@@ -1,0 +1,6 @@
+framework module Pods_Properti_AndaTests {
+  umbrella header "Pods-Properti AndaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
