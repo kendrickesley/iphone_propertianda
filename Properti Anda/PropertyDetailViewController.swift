@@ -9,14 +9,36 @@
 import UIKit
 import Material
 
+//protocol PropertySelectionDelegate: class {
+//    func propertySelected(newProperty: Property)
+//}
+
 class PropertyDetailViewController: UIViewController {
 
-    public var detailInfo:String?
+    public var property:Property?{
+        didSet{
+            print("property Set")
+            self.updateScreen()
+        }
+    }
+    @IBOutlet weak var addressLabel:UILabel?
+    @IBOutlet weak var emptyView:UIView?
+    @IBOutlet weak var propertyScrollView:UIScrollView?
+    @IBOutlet weak var propertyImage:UIImageView?
+    @IBOutlet weak var propertyDetail:UILabel?
+    @IBOutlet weak var investBtn:RaisedButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationBar()
-
+        updateScreen()
+        if self.property != nil {
+            propertyScrollView?.alpha = 1.0
+            emptyView?.alpha = 0
+        }else{
+            emptyView?.alpha = 1.0
+            propertyScrollView?.alpha = 0
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +56,14 @@ class PropertyDetailViewController: UIViewController {
         navigationItem.backButton.tintColor = Color.white
     }
     
+    func updateScreen(){
+        if property == nil {
+            return
+        }
+        self.addressLabel?.text = self.property?.getAddress() ?? "Default Address"
+        self.propertyImage?.downloadedFrom(link: (self.property?.getImageURL())!)
+        self.propertyDetail?.text = self.property?.getDetail() ?? "No details provided"
+    }
 
     /*
     // MARK: - Navigation
@@ -46,3 +76,11 @@ class PropertyDetailViewController: UIViewController {
     */
 
 }
+
+//extension PropertyDetailViewController: PropertySelectionDelegate {
+//    func propertySelected(newProperty: Property) {
+//        print("property selected")
+//        property = newProperty
+//        updateScreen()
+//    }
+//}

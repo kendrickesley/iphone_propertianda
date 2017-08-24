@@ -15,8 +15,20 @@ class PropertySplitViewController: UISplitViewController, UISplitViewControllerD
         super.viewDidLoad()
         self.delegate = self
         // Do any additional setup after loading the view.
+//        delegateMaster()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
     }
+    
+//    func delegateMaster(){
+//        guard let masterVC:PropertyListViewController = self.splitViewController?.viewControllers.first as? PropertyListViewController else {return}
+//        guard let detailVC:PropertyDetailViewController = self.splitViewController?.viewControllers[1] as? PropertyDetailViewController else {return}
+//        masterVC.delegate = detailVC
+//        print("delegated")
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -26,7 +26,8 @@ class SignUpController: UIViewController {
     }
 
     @IBAction func signUp(sender: Any){
-        self.performSegue(withIdentifier: "unwindToRoot", sender: self)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = AppNavigationDrawerController(rootViewController: appDelegate.propertySplitViewController, leftViewController: appDelegate.drawerViewController, rightViewController: nil)
     }
     
     /*

@@ -34,6 +34,11 @@ class DrawerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logOut(sender: Any){
+        let controller = UIStoryboard.viewController(identifier: "LoginController") as! LoginController
+        appDelegate.window?.rootViewController = controller
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -81,7 +86,7 @@ extension DrawerViewController: UITableViewDataSource{
         if section == "home"{
             handleHomeButton()
         }else if section == "preferences"{
-            handlePreferencesButton()
+//            handlePreferencesButton()
         }
         
 

@@ -16,9 +16,7 @@ class RootViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool)
     {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        self.performSegue(withIdentifier: "introSegue", sender: self);
-        appDelegate.window?.rootViewController = AppNavigationDrawerController(rootViewController: appDelegate.propertySplitViewController, leftViewController: appDelegate.drawerViewController, rightViewController: nil)
+        self.performSegue(withIdentifier: "introSegue", sender: self);
     }
     
     @IBAction func unwindToRoot(_ segue: UIStoryboardSegue) {
