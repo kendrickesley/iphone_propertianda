@@ -59,10 +59,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC0-zl-S58" customClass="PresenterCard" customModule="Material">
-                                                    <rect key="frame" x="0.0" y="8" width="320" height="300"/>
+                                                    <rect key="frame" x="0.0" y="8" width="414" height="300"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-8W-dLL">
-                                                            <rect key="frame" x="0.0" y="-160" width="320" height="180"/>
+                                                            <rect key="frame" x="0.0" y="-160" width="414" height="180"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="180" id="JSk-VU-lpU"/>
                                                                 <constraint firstAttribute="height" constant="200" id="r6Q-dr-cZN"/>
@@ -91,7 +91,7 @@
                                                             </variation>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igb-dX-Wsq" customClass="Bar" customModule="Material">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFq-a8-QMJ" customClass="FlatButton" customModule="Material">
                                                                     <rect key="frame" x="0.0" y="131.33333333333331" width="160.33333333333334" height="32"/>
@@ -127,7 +127,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2ec-Jh-byd">
-                                                                    <rect key="frame" x="5" y="109.33333333333331" width="160" height="2.6666666666666714"/>
+                                                                    <rect key="frame" x="5" y="109.33333333333331" width="207" height="2.6666666666666714"/>
                                                                     <color key="progressTintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <color key="trackTintColor" red="0.93066068540000002" green="0.93066068540000002" blue="0.93066068540000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </progressView>
@@ -378,7 +378,7 @@
         <scene sceneID="xXx-Gz-ErT">
             <objects>
                 <navigationController id="Zzf-fh-doz" customClass="AppNavigationController" customModule="Properti_Anda" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2uz-gm-CPF" customClass="NavigationBar" customModule="Material">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2uz-gm-CPF" customClass="NavigationBar" customModule="Material">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -412,7 +412,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ztB-0P-6Ib">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="preferencesCell" id="ztB-0P-6Ib">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztB-0P-6Ib" id="jtY-Sm-LGf">
@@ -767,18 +767,21 @@ Kendrick Kesley</string>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7A-fO-fxf">
                                             <rect key="frame" x="0.0" y="349" width="414" height="83.666666666666686"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="welcome_title"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To The Future" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLN-lk-H44">
                                             <rect key="frame" x="0.0" y="437.66666666666669" width="414" height="39.666666666666629"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="welcome_second_p"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
                                             <color key="textColor" red="0.98638613460000002" green="1" blue="0.99589087629999995" alpha="0.88798415490000004" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of Investment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84m-Wq-yZ0">
                                             <rect key="frame" x="-0.66666666666665719" y="482.33333333333326" width="414.33333333333337" height="39.666666666666742"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="welcome_third_p"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
                                             <color key="textColor" red="0.986386134584185" green="1" blue="0.99589087628991846" alpha="0.88798415491690141" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -869,6 +872,7 @@ Kendrick Kesley</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcs-B2-cnD">
                                                     <rect key="frame" x="0.0" y="99" width="174" height="46.666666666666657"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="intro_first_circle"/>
                                                     <string key="text">Join
 Us</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -978,6 +982,7 @@ Us</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sd-Ko-9w9">
                                                     <rect key="frame" x="0.0" y="99" width="174" height="46.666666666666686"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="intro_second_circle"/>
                                                     <string key="text">Buy
 Properties</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -1084,6 +1089,7 @@ Properties</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xch-Ff-Ogs">
                                                     <rect key="frame" x="0.0" y="99" width="174" height="46.666666666666629"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="intro_third_circle"/>
                                                     <string key="text">Collect
 Profits</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -1343,6 +1349,7 @@ Profits</string>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoB-cG-bLk">
                                             <rect key="frame" x="0.0" y="258.33333333333331" width="414" height="119.33333333333337"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="intro_start_journey"/>
                                             <string key="text">Start
 Your Journey</string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
@@ -1351,6 +1358,7 @@ Your Journey</string>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ9-ga-YxT" customClass="RaisedButton" customModule="Material">
                                             <rect key="frame" x="100" y="452.66666666666669" width="214" height="42"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="intro_button_start"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                             <state key="normal" title="Start">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1471,6 +1479,9 @@ Your Journey</string>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ywU-lE-Wb0">
                                 <rect key="frame" x="50" y="82" width="111" height="150"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_image">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ywU-lE-Wb0" secondAttribute="height" multiplier="110:149" id="VfG-sa-LYA"/>
                                     <constraint firstAttribute="height" constant="150" id="cgO-rX-jAk"/>
@@ -1498,6 +1509,7 @@ Your Journey</string>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXq-Ki-6LB">
                                 <rect key="frame" x="180.99999999999997" y="109.33333333333331" width="153.33333333333329" height="95.666666666666686"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_title"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="119.33333333333331" id="gwi-fk-cmX">
                                         <variation key="heightClass=compact-widthClass=regular" constant="119.33"/>
@@ -1522,6 +1534,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-ON-gnj" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="311" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_email_field"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="continue"/>
                                 <userDefinedRuntimeAttributes>
@@ -1548,6 +1561,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oq8-gv-K9j" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="366" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_password_field"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -1566,6 +1580,7 @@ Anda</string>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc5-6H-yke" customClass="Button" customModule="Material">
                                 <rect key="frame" x="105" y="461" width="204" height="36"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_login_button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Login"/>
                                 <userDefinedRuntimeAttributes>
@@ -1592,12 +1607,14 @@ Anda</string>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZB-wD-bZw">
                                 <rect key="frame" x="199" y="532" width="16.666666666666657" height="17.666666666666629"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_or_label"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUa-Bb-Wdu" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="180.66666666666666" y="559.66666666666663" width="54" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login_sign_up_button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1758,6 +1775,7 @@ Anda</string>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xND-td-9eK">
                                 <rect key="frame" x="-0.33333333333334281" y="95" width="414" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_title"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1765,6 +1783,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bzm-SS-PNU" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="190" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_firstname_field"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="XME-BA-VnZ">
                                         <variation key="heightClass=compact-widthClass=regular" constant="270"/>
@@ -1800,6 +1819,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsK-Of-FAG" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="245" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_lastname_field"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="slq-AI-pb9">
                                         <variation key="heightClass=compact-widthClass=regular" constant="300"/>
@@ -1834,6 +1854,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="and-K3-Dh1" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="300" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_email_field"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -1854,6 +1875,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rY-7H-b8R" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="355" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_password_field"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -1873,6 +1895,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-hC-8AO" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="410" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_confirm_field"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -1892,6 +1915,7 @@ Anda</string>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myT-6q-0R0" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="70" y="465" width="274" height="30"/>
                                 <color key="tintColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_id_field"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
@@ -1911,6 +1935,7 @@ Anda</string>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQY-Jo-KJZ" customClass="Button" customModule="Material">
                                 <rect key="frame" x="105" y="560" width="204" height="36"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_signup_button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Sign Up"/>
                                 <userDefinedRuntimeAttributes>
@@ -1937,12 +1962,14 @@ Anda</string>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e7-Lm-rsV">
                                 <rect key="frame" x="199.33333333333337" y="631" width="16.666666666666657" height="17.666666666666629"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_or_label"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-by-yhh" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="189" y="658.66666666666663" width="38" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="signup_login_button"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.27480160640000001" green="0.82521049219999998" blue="0.3542421966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2068,6 +2095,14 @@ Anda</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="DeC-QY-EfF"/>
+                                <exclude reference="ObA-4y-ora"/>
+                                <exclude reference="YFC-hI-vhs"/>
+                                <exclude reference="dnq-aT-0uo"/>
+                                <exclude reference="gB3-WM-Llt"/>
+                                <exclude reference="ojl-GX-LkO"/>
+                                <exclude reference="pMh-dL-quh"/>
+                                <exclude reference="qKj-QO-md0"/>
                                 <exclude reference="RWg-om-FzT"/>
                                 <exclude reference="Usf-ll-VIR"/>
                                 <exclude reference="gsb-dp-3Yr"/>
@@ -2084,14 +2119,6 @@ Anda</string>
                                 <exclude reference="nN0-Bh-Imm"/>
                                 <exclude reference="pa4-Ef-Ut0"/>
                                 <exclude reference="pgk-Dl-sfa"/>
-                                <exclude reference="DeC-QY-EfF"/>
-                                <exclude reference="ObA-4y-ora"/>
-                                <exclude reference="YFC-hI-vhs"/>
-                                <exclude reference="dnq-aT-0uo"/>
-                                <exclude reference="gB3-WM-Llt"/>
-                                <exclude reference="ojl-GX-LkO"/>
-                                <exclude reference="pMh-dL-quh"/>
-                                <exclude reference="qKj-QO-md0"/>
                                 <exclude reference="GP5-ua-XWR"/>
                                 <exclude reference="bgg-ec-6qS"/>
                                 <exclude reference="dJh-zl-vKE"/>
@@ -2138,6 +2165,10 @@ Anda</string>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="ObA-4y-ora"/>
+                                <exclude reference="YFC-hI-vhs"/>
+                                <include reference="ojl-GX-LkO"/>
+                                <include reference="pMh-dL-quh"/>
                                 <include reference="gsb-dp-3Yr"/>
                                 <include reference="hWO-cP-460"/>
                                 <exclude reference="hyw-xR-zdc"/>
@@ -2146,10 +2177,6 @@ Anda</string>
                                 <include reference="WRZ-gg-14F"/>
                                 <include reference="nN0-Bh-Imm"/>
                                 <include reference="pa4-Ef-Ut0"/>
-                                <include reference="ObA-4y-ora"/>
-                                <exclude reference="YFC-hI-vhs"/>
-                                <include reference="ojl-GX-LkO"/>
-                                <include reference="pMh-dL-quh"/>
                                 <include reference="dJh-zl-vKE"/>
                                 <exclude reference="lUz-pg-2Es"/>
                                 <exclude reference="pRo-Qg-uNQ"/>
@@ -2177,6 +2204,10 @@ Anda</string>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <exclude reference="DeC-QY-EfF"/>
+                                <include reference="dnq-aT-0uo"/>
+                                <include reference="gB3-WM-Llt"/>
+                                <include reference="qKj-QO-md0"/>
                                 <include reference="RWg-om-FzT"/>
                                 <include reference="Usf-ll-VIR"/>
                                 <include reference="3Zi-GJ-nKc"/>
@@ -2185,10 +2216,6 @@ Anda</string>
                                 <include reference="7rL-Hg-wfK"/>
                                 <include reference="9ZY-ka-Gzl"/>
                                 <include reference="pgk-Dl-sfa"/>
-                                <exclude reference="DeC-QY-EfF"/>
-                                <include reference="dnq-aT-0uo"/>
-                                <include reference="gB3-WM-Llt"/>
-                                <include reference="qKj-QO-md0"/>
                                 <include reference="GP5-ua-XWR"/>
                                 <include reference="bgg-ec-6qS"/>
                                 <include reference="uW2-78-dFL"/>
