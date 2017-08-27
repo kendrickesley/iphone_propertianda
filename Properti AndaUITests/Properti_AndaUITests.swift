@@ -200,6 +200,7 @@ class Properti_AndaUITests: XCTestCase {
         app.buttons.element(matching: .any, identifier: "login_login_button").tap()
         
         app.cells.element(boundBy: 0).tap()
+        XCTAssertTrue(app.buttons["Invest"].exists)
         XCTAssertEqual(app.navigationBars.buttons.count, 1)
         XCTAssertFalse(app.navigationBars.staticTexts["Properties"].exists)
         XCTAssertTrue(app.navigationBars.staticTexts["Property Detail"].exists)
