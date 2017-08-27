@@ -62,8 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIStoryboard.viewController(identifier: "PropertyDetailViewController") as! PropertyDetailViewController
     }()
     
-    public lazy var preferencesViewController: PreferencesViewController = {
-        return UIStoryboard.viewController(identifier: "PreferencesViewController") as! PreferencesViewController
+    public lazy var preferencesNavigationController: PreferencesNavigationController = {
+        return UIStoryboard.viewController(identifier: "PreferencesNavigationController") as! PreferencesNavigationController
     }()
 
 

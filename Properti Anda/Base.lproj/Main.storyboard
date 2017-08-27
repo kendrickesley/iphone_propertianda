@@ -372,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVM-AZ-kjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1307.2463768115942" y="132.88043478260872"/>
+            <point key="canvasLocation" x="-400.00000000000006" y="132.88043478260872"/>
         </scene>
         <!--App Navigation Controller-->
         <scene sceneID="xXx-Gz-ErT">
@@ -426,10 +426,11 @@
                             <outlet property="delegate" destination="0Nb-u5-9lE" id="ZrT-Ef-YiU"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="cJE-TC-4Ue"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="al3-hI-Qdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2219" y="435"/>
+            <point key="canvasLocation" x="-1313.0434782608697" y="434.51086956521743"/>
         </scene>
         <!--Drawer View Controller-->
         <scene sceneID="oAR-De-Cbv">
@@ -2246,6 +2247,24 @@ Anda</string>
                 <exit id="HA0-Cx-fAq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2220.289855072464" y="-2778.2608695652175"/>
+        </scene>
+        <!--Preferences Navigation Controller-->
+        <scene sceneID="iSY-li-xJV">
+            <objects>
+                <navigationController storyboardIdentifier="PreferencesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wSh-lc-kkt" customClass="PreferencesNavigationController" customModule="Properti_Anda" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cMM-wv-K1B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Nb-u5-9lE" kind="relationship" relationship="rootViewController" id="ZZ0-fC-5bE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tc2-s0-SJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2220.289855072464" y="434.51086956521743"/>
         </scene>
     </scenes>
     <resources>

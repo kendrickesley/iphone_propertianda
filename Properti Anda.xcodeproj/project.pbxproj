@@ -10,6 +10,7 @@
 		0B115ED6EC3BC8E3F6359ED2 /* Pods_Properti_AndaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A2135BC56A5E310D794D9F /* Pods_Properti_AndaUITests.framework */; };
 		D3AE16682EC7E49AA889A6E5 /* Pods_Properti_Anda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD508A32B6382B5972E9AD3 /* Pods_Properti_Anda.framework */; };
 		E20D59566A55BFA3F934A01E /* Pods_Properti_AndaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664475856D9BF69E2025294 /* Pods_Properti_AndaTests.framework */; };
+		EE2BD0321F5281CE000E7A16 /* PreferencesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */; };
 		EE9DCFD81F4820FE009CA7E2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFD71F4820FE009CA7E2 /* RootViewController.swift */; };
 		EE9DCFE01F4836E2009CA7E2 /* IntroPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFDF1F4836E2009CA7E2 /* IntroPageController.swift */; };
 		EE9DCFE21F483812009CA7E2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */; };
@@ -63,6 +64,7 @@
 		94A2135BC56A5E310D794D9F /* Pods_Properti_AndaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Properti_AndaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA035F143C0865DF53C9E7F5 /* Pods-Properti AndaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti AndaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Properti AndaTests/Pods-Properti AndaTests.release.xcconfig"; sourceTree = "<group>"; };
 		C539C217F91325A2C2A4B404 /* Pods-Properti Anda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti Anda.release.xcconfig"; path = "Pods/Target Support Files/Pods-Properti Anda/Pods-Properti Anda.release.xcconfig"; sourceTree = "<group>"; };
+		EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesNavigationController.swift; sourceTree = "<group>"; };
 		EE9DCFD71F4820FE009CA7E2 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EE9DCFDF1F4836E2009CA7E2 /* IntroPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageController.swift; sourceTree = "<group>"; };
 		EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				EEBE3C0D1F4BF7280029BA0B /* PropertySplitViewController.swift */,
 				EEBE3C0F1F4BFC2A0029BA0B /* AppNavigationController.swift */,
 				EEBE3C111F4BFF4B0029BA0B /* PropertyDetailViewController.swift */,
+				EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */,
 			);
 			path = "Properti Anda";
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				EEA7168C1F4AED2C0035D829 /* DrawerCell.swift in Sources */,
 				EE9DCFD81F4820FE009CA7E2 /* RootViewController.swift in Sources */,
 				EEC773581F48132300B22C15 /* Properti_Anda.xcdatamodeld in Sources */,
+				EE2BD0321F5281CE000E7A16 /* PreferencesNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

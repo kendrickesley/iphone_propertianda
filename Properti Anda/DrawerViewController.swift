@@ -104,7 +104,7 @@ extension DrawerViewController {
     @objc
     fileprivate func handlePreferencesButton(){
 //        toolbarController?.transition(to: appDelegate.preferencesViewController, completion: closeNavigationDrawer)
-        navigationDrawerController?.transition(to: appDelegate.preferencesViewController, completion: closeNavigationDrawer)
+        navigationDrawerController?.transition(to: appDelegate.preferencesNavigationController, completion: closeNavigationDrawer)
     }
     
     fileprivate func closeNavigationDrawer(result: Bool) {
