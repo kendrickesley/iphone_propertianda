@@ -29,6 +29,7 @@
                     </view>
                     <connections>
                         <segue destination="ag5-3o-hEk" kind="show" identifier="introSegue" animates="NO" id="1yp-Ua-Yn2"/>
+                        <segue destination="IJL-La-wSB" kind="show" identifier="rootLoginSegue" id="jwl-1B-gA2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2294,7 +2295,7 @@ Anda</string>
         <image name="yellow-door" width="400" height="637"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n3R-BC-eYN"/>
+        <segue reference="jwl-1B-gA2"/>
         <segue reference="Lif-ra-4Rh"/>
     </inferredMetricsTieBreakers>
 </document>

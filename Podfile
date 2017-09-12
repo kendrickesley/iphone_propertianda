@@ -6,6 +6,8 @@ target 'Properti Anda' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 
   pod 'Material', '~> 2.0'
+  pod 'SwiftyJSON'
+  pod 'Alamofire', '~> 4.5'
   # Pods for Properti Anda
 
   target 'Properti AndaTests' do

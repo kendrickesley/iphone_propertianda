@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class Properties{
     var properties:[Property] = []
@@ -28,6 +30,24 @@ class Properties{
         self.properties.append(
             Property(address: "304 Skycrapper St, St Kilda", price: 1200000, progressPrice: 100000, completed: false, investors: 20, detail: "It has a total area of 2760 Ha and newly developed 1000 Ha since 1994, with 54 clusters and 25,000 units built and populated 65,000 inhabitants. This provides a space of growth for investment and confidence in growth.", imageURL: "http://admin.propertianda.com/images/property_list/cda80cfcec0aada8fede09c171dd44bc.png")
         )
+    }
+    
+    public func requestProperties(callback: @escaping () -> Any){
+        Alamofire.request("https://httpbin.org/get").responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let body = response.result.value {
+                let json = JSON(body)
+                self.parsePropertiesJson(json: json, callback: callback)
+            }
+        }
+    }
+    
+    private func parsePropertiesJson(json: JSON, callback: ()->Any){
+        print("JSON: \(json)") // serialized json response
+        var _ = callback()
     }
     
     public func getAllProperties()->[Property]{

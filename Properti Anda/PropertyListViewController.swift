@@ -13,7 +13,6 @@ class PropertyListViewController: UIViewController {
     @IBOutlet weak var propertyTableView:UITableView!
     fileprivate var menuButton: IconButton!
     let properties:Properties = Properties()
-//    weak var delegate: PropertySelectionDelegate?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +20,9 @@ class PropertyListViewController: UIViewController {
         propertyTableView.dataSource = self
         prepareMenuButton()
         prepareNavigationItem()
+        properties.requestProperties(callback: {
+                self.propertyTableView.reloadData()
+        })
         // Do any additional setup after loading the view.
     }
 

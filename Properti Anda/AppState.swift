@@ -80,7 +80,7 @@ class AppStateModel{
         updateDatabase()
     }
     
-    func getAppState(){
+    func getAppStates(){
         do{
             let fetchRequest = NSFetchRequest <NSFetchRequestResult> (entityName:"AppState")
             let results = try managedContext.fetch(fetchRequest)

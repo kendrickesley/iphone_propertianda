@@ -118,13 +118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Properti Anda/Properties.swift"
-            timestampString = "525075885.720315"
+            timestampString = "526887209.944489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "Properties"
-            landmarkType = "3">
+            endingLineNumber = "10">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
