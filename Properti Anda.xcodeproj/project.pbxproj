@@ -11,6 +11,9 @@
 		D3AE16682EC7E49AA889A6E5 /* Pods_Properti_Anda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD508A32B6382B5972E9AD3 /* Pods_Properti_Anda.framework */; };
 		E20D59566A55BFA3F934A01E /* Pods_Properti_AndaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664475856D9BF69E2025294 /* Pods_Properti_AndaTests.framework */; };
 		EE2BD0321F5281CE000E7A16 /* PreferencesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */; };
+		EE51512B1F676B04000EBD26 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51512A1F676B04000EBD26 /* AppState.swift */; };
+		EE51512E1F676DB9000EBD26 /* AppState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51512C1F676DB9000EBD26 /* AppState+CoreDataClass.swift */; };
+		EE51512F1F676DB9000EBD26 /* AppState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51512D1F676DB9000EBD26 /* AppState+CoreDataProperties.swift */; };
 		EE9DCFD81F4820FE009CA7E2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFD71F4820FE009CA7E2 /* RootViewController.swift */; };
 		EE9DCFE01F4836E2009CA7E2 /* IntroPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFDF1F4836E2009CA7E2 /* IntroPageController.swift */; };
 		EE9DCFE21F483812009CA7E2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */; };
@@ -65,6 +68,9 @@
 		AA035F143C0865DF53C9E7F5 /* Pods-Properti AndaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti AndaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Properti AndaTests/Pods-Properti AndaTests.release.xcconfig"; sourceTree = "<group>"; };
 		C539C217F91325A2C2A4B404 /* Pods-Properti Anda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti Anda.release.xcconfig"; path = "Pods/Target Support Files/Pods-Properti Anda/Pods-Properti Anda.release.xcconfig"; sourceTree = "<group>"; };
 		EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesNavigationController.swift; sourceTree = "<group>"; };
+		EE51512A1F676B04000EBD26 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		EE51512C1F676DB9000EBD26 /* AppState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EE51512D1F676DB9000EBD26 /* AppState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EE9DCFD71F4820FE009CA7E2 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EE9DCFDF1F4836E2009CA7E2 /* IntroPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPageController.swift; sourceTree = "<group>"; };
 		EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -153,8 +159,11 @@
 		EEBE3C131F4C05610029BA0B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE51512C1F676DB9000EBD26 /* AppState+CoreDataClass.swift */,
+				EE51512D1F676DB9000EBD26 /* AppState+CoreDataProperties.swift */,
 				EEA716891F4AD8620035D829 /* DrawerData.swift */,
 				EEBE3C141F4C05820029BA0B /* Properties.swift */,
+				EE51512A1F676B04000EBD26 /* AppState.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -550,7 +559,10 @@
 				EEA716901F4B9FFA0035D829 /* AppToolbarController.swift in Sources */,
 				EE9DCFE21F483812009CA7E2 /* IntroViewController.swift in Sources */,
 				EEA716801F4A71290035D829 /* LoginController.swift in Sources */,
+				EE51512E1F676DB9000EBD26 /* AppState+CoreDataClass.swift in Sources */,
 				EEA716841F4AD0120035D829 /* DrawerViewController.swift in Sources */,
+				EE51512B1F676B04000EBD26 /* AppState.swift in Sources */,
+				EE51512F1F676DB9000EBD26 /* AppState+CoreDataProperties.swift in Sources */,
 				EEA7168C1F4AED2C0035D829 /* DrawerCell.swift in Sources */,
 				EE9DCFD81F4820FE009CA7E2 /* RootViewController.swift in Sources */,
 				EEC773581F48132300B22C15 /* Properti_Anda.xcdatamodeld in Sources */,
