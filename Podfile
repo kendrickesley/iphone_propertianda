@@ -10,6 +10,7 @@ target 'Properti Anda' do
   pod 'Alamofire', '~> 4.5'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod "SwiftSpinner"
   # Pods for Properti Anda
 
   target 'Properti AndaTests' do

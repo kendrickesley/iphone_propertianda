@@ -8,30 +8,48 @@
 
 import UIKit
 import Material
-
-//protocol PropertySelectionDelegate: class {
-//    func propertySelected(newProperty: Property)
-//}
+import GoogleMaps
+import SwiftSpinner
 
 class PropertyDetailViewController: UIViewController {
 
     public var property:Property?{
         didSet{
-            print("property Set")
             self.updateScreen()
         }
     }
+    
+    private var showMore = false
+    
     @IBOutlet weak var addressLabel:UILabel?
     @IBOutlet weak var emptyView:UIView?
     @IBOutlet weak var propertyScrollView:UIScrollView?
     @IBOutlet weak var propertyImage:UIImageView?
     @IBOutlet weak var propertyDetail:UILabel?
     @IBOutlet weak var investBtn:RaisedButton?
+    @IBOutlet weak var myMapView:GMSMapView?
+    @IBOutlet weak var showMoreBtn:UIButton?
+    
+    @IBAction func showMoreClicked(){
+        self.showMore = !self.showMore
+        if showMore {
+            self.showMoreBtn?.setTitle("Show Less", for: .normal)
+            self.propertyDetail?.numberOfLines = 0
+            self.propertyDetail?.lineBreakMode = .byWordWrapping
+            self.propertyDetail?.sizeToFit()
+        }else{
+            self.showMoreBtn?.setTitle("Show More", for: .normal)
+            self.propertyDetail?.numberOfLines = 2
+            self.propertyDetail?.lineBreakMode = .byWordWrapping
+            self.propertyDetail?.sizeToFit()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationBar()
         updateScreen()
+        SwiftSpinner.setTitleFont(UIFont(name: "Helvetica Neue", size: 22.0))
         if self.property != nil {
             propertyScrollView?.alpha = 1.0
             emptyView?.alpha = 0
@@ -39,6 +57,14 @@ class PropertyDetailViewController: UIViewController {
             emptyView?.alpha = 1.0
             propertyScrollView?.alpha = 0
         }
+        let camera = GMSCameraPosition.camera(withLatitude: 4.739001, longitude: -74.059616, zoom: 13)
+        myMapView?.camera = camera
+        
+        self.propertyDetail?.numberOfLines = 2
+        self.propertyDetail?.lineBreakMode = .byWordWrapping
+        self.propertyDetail?.sizeToFit()
+        self.propertyDetail?.text = ""
+        self.showMoreBtn?.alpha = 0
         // Do any additional setup after loading the view.
     }
 
@@ -49,7 +75,7 @@ class PropertyDetailViewController: UIViewController {
     
     func prepareNavigationBar(){
         navigationItem.title = "Property Detail"
-        navigationItem.detail = "Address of Given Property"
+        navigationItem.detail = ""
         navigationItem.titleLabel.textColor = Color.white
         navigationItem.detailLabel.textColor = Color.white
         navigationItem.backBarButtonItem?.tintColor = Color.white
@@ -57,12 +83,40 @@ class PropertyDetailViewController: UIViewController {
     }
     
     func updateScreen(){
-        if property == nil {
+        if self.property == nil {
             return
         }
+        SwiftSpinner.show("Requesting details...")
+        self.property?.requestDetail(callback: {
+            self.showMoreBtn?.alpha = 1.0
+            self.propertyDetail?.attributedText = self.stringFromHtml(string: self.property?.getDetail() ?? "No details provided")
+            self.myMapView?.animate(toLocation: CLLocationCoordinate2DMake(self.property?.getLatitude() ?? 0, self.property?.getLongitude() ?? 0))
+            self.myMapView?.animate(toZoom: 13)
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(self.property?.getLatitude() ?? 0, self.property?.getLongitude() ?? 0)
+            marker.snippet = self.property?.address ?? "Property address"
+            marker.appearAnimation = .pop
+            marker.map = self.myMapView
+            SwiftSpinner.hide()
+            return ""
+        })
+        navigationItem.detail = self.property?.getAddress() ?? ""
         self.addressLabel?.text = self.property?.getAddress() ?? "Default Address"
         self.propertyImage?.downloadedFrom(link: (self.property?.getImageURL())!)
-        self.propertyDetail?.text = self.property?.getDetail() ?? "No details provided"
+    }
+    
+    private func stringFromHtml(string: String) -> NSAttributedString? {
+        do {
+            let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+            if let d = data {
+                let str = try NSAttributedString(data: d,
+                                                 options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                                                 documentAttributes: nil)
+                return str
+            }
+        } catch {
+        }
+        return nil
     }
 
     /*
@@ -77,10 +131,3 @@ class PropertyDetailViewController: UIViewController {
 
 }
 
-//extension PropertyDetailViewController: PropertySelectionDelegate {
-//    func propertySelected(newProperty: Property) {
-//        print("property selected")
-//        property = newProperty
-//        updateScreen()
-//    }
-//}

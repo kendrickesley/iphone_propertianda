@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import SwiftSpinner
 
 class PropertyListViewController: UIViewController {
     @IBOutlet weak var propertyTableView:UITableView!
@@ -16,12 +17,16 @@ class PropertyListViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        SwiftSpinner.setTitleFont(UIFont(name: "Helvetica Neue", size: 22.0))
         propertyTableView.delegate = self
         propertyTableView.dataSource = self
         prepareMenuButton()
         prepareNavigationItem()
+        SwiftSpinner.show("Requesting properties...")
         properties.requestProperties(callback: {
-                self.propertyTableView.reloadData()
+            SwiftSpinner.hide()
+            self.propertyTableView.reloadData()
+            return ""
         })
         // Do any additional setup after loading the view.
     }
