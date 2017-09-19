@@ -8,6 +8,8 @@ target 'Properti Anda' do
   pod 'Material', '~> 2.0'
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 4.5'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   # Pods for Properti Anda
 
   target 'Properti AndaTests' do

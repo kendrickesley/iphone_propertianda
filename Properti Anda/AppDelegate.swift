@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Material
+import GoogleMaps
 
 extension UIStoryboard {
     class func viewController(identifier: String) -> UIViewController {
@@ -69,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyAn9gaUlkkMdOSEbj68gutIOa-4znKfDJw")
         return true
     }
 
