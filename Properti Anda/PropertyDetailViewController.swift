@@ -30,6 +30,10 @@ class PropertyDetailViewController: UIViewController {
     @IBOutlet weak var myMapView:GMSMapView?
     @IBOutlet weak var showMoreBtn:UIButton?
     
+    @IBOutlet weak var priceLabel:UILabel?
+    @IBOutlet weak var fundedLabel:UILabel?
+    @IBOutlet weak var investorsLabel:UILabel?
+    
     @IBAction func showMoreClicked(){
         self.showMore = !self.showMore
         if showMore {
@@ -102,6 +106,9 @@ class PropertyDetailViewController: UIViewController {
         })
         navigationItem.detail = self.property?.getAddress() ?? ""
         self.addressLabel?.text = self.property?.getAddress() ?? "Default Address"
+        self.priceLabel?.text = self.property?.getPrice(formatted: true) ?? ""
+        self.fundedLabel?.text = self.property?.getProgressPrice(formatted: true, independent: true)
+        self.investorsLabel?.text = self.property?.getInvestors() ?? "0"
         self.propertyImage?.downloadedFrom(link: (self.property?.getImageURL())!)
     }
     

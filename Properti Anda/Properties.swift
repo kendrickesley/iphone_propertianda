@@ -92,6 +92,10 @@ class Property{
         return self.price
     }
     
+    public func getInvestors()->String{
+        return String(self.investors)
+    }
+    
     public func requestDetail(callback: @escaping () -> Any){
         let params = [
             "mode": "detail",
@@ -144,11 +148,11 @@ class Property{
     public func getProgressPrice()->Double{
         return self.progressPrice
     }
-    public func getProgressPrice(formatted: Bool)->String{
+    public func getProgressPrice(formatted: Bool, independent: Bool = false)->String{
         if formatted {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = NumberFormatter.Style.decimal
-            return "of $" + numberFormatter.string(from: NSNumber(value:self.progressPrice / 10560))!
+            return (independent ? "" : "of ") + "$" + numberFormatter.string(from: NSNumber(value:self.progressPrice / 10560))!
         }else{
             return String(self.getProgressPrice())
         }
