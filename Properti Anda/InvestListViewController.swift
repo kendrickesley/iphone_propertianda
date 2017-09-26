@@ -11,7 +11,7 @@ import Material
 
 class InvestListViewController: UITableViewController {
     fileprivate var menuButton: IconButton!
-    
+    var investments:Investments = Investments()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,12 +49,19 @@ class InvestListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.investments.getAllInvestments().count
+    }
+ 
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell:InvestCell = tableView.dequeueReusableCell(withIdentifier: "InvestCell") as? InvestCell else {return InvestCell()}
+        _ = self.investments.getInvestment(byIndex: indexPath.row)
+        return cell
     }
 
 }

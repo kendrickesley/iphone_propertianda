@@ -10,6 +10,7 @@
 		0B115ED6EC3BC8E3F6359ED2 /* Pods_Properti_AndaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A2135BC56A5E310D794D9F /* Pods_Properti_AndaUITests.framework */; };
 		D3AE16682EC7E49AA889A6E5 /* Pods_Properti_Anda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD508A32B6382B5972E9AD3 /* Pods_Properti_Anda.framework */; };
 		E20D59566A55BFA3F934A01E /* Pods_Properti_AndaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7664475856D9BF69E2025294 /* Pods_Properti_AndaTests.framework */; };
+		EE27A2421F7A52160073BDD2 /* Investments.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE27A2411F7A52160073BDD2 /* Investments.swift */; };
 		EE2BD0321F5281CE000E7A16 /* PreferencesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */; };
 		EE2F6EC91F7A14C400982D4D /* InvestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F6EC81F7A14C400982D4D /* InvestViewController.swift */; };
 		EE2F6ECB1F7A22F300982D4D /* InvestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F6ECA1F7A22F300982D4D /* InvestCell.swift */; };
@@ -70,6 +71,7 @@
 		94A2135BC56A5E310D794D9F /* Pods_Properti_AndaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Properti_AndaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA035F143C0865DF53C9E7F5 /* Pods-Properti AndaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti AndaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Properti AndaTests/Pods-Properti AndaTests.release.xcconfig"; sourceTree = "<group>"; };
 		C539C217F91325A2C2A4B404 /* Pods-Properti Anda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti Anda.release.xcconfig"; path = "Pods/Target Support Files/Pods-Properti Anda/Pods-Properti Anda.release.xcconfig"; sourceTree = "<group>"; };
+		EE27A2411F7A52160073BDD2 /* Investments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Investments.swift; sourceTree = "<group>"; };
 		EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesNavigationController.swift; sourceTree = "<group>"; };
 		EE2F6EC81F7A14C400982D4D /* InvestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestViewController.swift; sourceTree = "<group>"; };
 		EE2F6ECA1F7A22F300982D4D /* InvestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestCell.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				EEA716891F4AD8620035D829 /* DrawerData.swift */,
 				EEBE3C141F4C05820029BA0B /* Properties.swift */,
 				EE51512A1F676B04000EBD26 /* AppState.swift */,
+				EE27A2411F7A52160073BDD2 /* Investments.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				EE9DCFE01F4836E2009CA7E2 /* IntroPageController.swift in Sources */,
 				EEA7167E1F4A6AAC0035D829 /* SignUpController.swift in Sources */,
 				EEA716861F4AD12D0035D829 /* AppNavigationDrawerController.swift in Sources */,
+				EE27A2421F7A52160073BDD2 /* Investments.swift in Sources */,
 				EE2F6ECD1F7A232500982D4D /* InvestListViewController.swift in Sources */,
 				EEBE3C151F4C05820029BA0B /* Properties.swift in Sources */,
 				EEBE3C121F4BFF4B0029BA0B /* PropertyDetailViewController.swift in Sources */,

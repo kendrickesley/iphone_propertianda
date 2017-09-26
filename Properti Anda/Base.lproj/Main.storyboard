@@ -322,7 +322,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnM-FD-oSn" customClass="RaisedButton" customModule="Material">
-                                        <rect key="frame" x="69" y="638" width="274.33333333333331" height="32"/>
+                                        <rect key="frame" x="69.333333333333314" y="638" width="274" height="32"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Invest">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -612,7 +612,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jag-d1-CaL" customClass="RaisedButton" customModule="Material">
-                                        <rect key="frame" x="69" y="607" width="274.33333333333331" height="32"/>
+                                        <rect key="frame" x="69.333333333333314" y="607" width="274" height="32"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Invest">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2563,18 +2563,69 @@ Anda</string>
         <scene sceneID="CuI-ev-Npt">
             <objects>
                 <tableViewController storyboardIdentifier="InvestListViewController" id="bw2-bJ-mE4" customClass="InvestListViewController" customModule="Properti_Anda" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xwd-oz-X5E">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="288" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xwd-oz-X5E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="pnc-5h-Uak">
+                            <rect key="frame" x="0.0" y="316" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HqH-C6-iTK" customClass="InvestCell" customModule="Properti_Anda">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvestCell" rowHeight="288" id="HqH-C6-iTK" customClass="InvestCell" customModule="Properti_Anda">
+                                <rect key="frame" x="0.0" y="28" width="414" height="288"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HqH-C6-iTK" id="6Yl-Gj-FPL">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="287.66666666666669"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="2Od-N6-74Y">
+                                            <rect key="frame" x="-113" y="8" width="640" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="8bl-Tk-djb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jl Kebon Kacang 12 No 39 A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sh-Se-aPn">
+                                            <rect key="frame" x="97" y="156" width="220" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20,000 invested" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kks-rx-0k1">
+                                            <rect key="frame" x="141" y="196" width="130.33333333333331" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1R-A1-N8M">
+                                            <rect key="frame" x="184" y="224" width="44.333333333333343" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$58,000 (50%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlS-pf-Wpt">
+                                            <rect key="frame" x="150.66666666666669" y="252" width="111.00000000000006" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="kks-rx-0k1" firstAttribute="top" secondItem="2Sh-Se-aPn" secondAttribute="bottom" constant="20" id="2pF-7g-8gj"/>
+                                        <constraint firstItem="J1R-A1-N8M" firstAttribute="centerX" secondItem="kks-rx-0k1" secondAttribute="centerX" id="572-kB-vf2"/>
+                                        <constraint firstItem="2Sh-Se-aPn" firstAttribute="centerX" secondItem="2Od-N6-74Y" secondAttribute="centerX" id="6qf-Gp-lBv"/>
+                                        <constraint firstItem="RlS-pf-Wpt" firstAttribute="top" secondItem="J1R-A1-N8M" secondAttribute="bottom" constant="8" id="ELY-KO-ulT"/>
+                                        <constraint firstItem="2Od-N6-74Y" firstAttribute="top" secondItem="6Yl-Gj-FPL" secondAttribute="topMargin" id="Smc-yx-iOL"/>
+                                        <constraint firstItem="2Sh-Se-aPn" firstAttribute="top" secondItem="2Od-N6-74Y" secondAttribute="bottom" constant="20" id="YTg-Rn-cHb"/>
+                                        <constraint firstItem="RlS-pf-Wpt" firstAttribute="centerX" secondItem="J1R-A1-N8M" secondAttribute="centerX" id="j3O-zL-c68"/>
+                                        <constraint firstItem="2Od-N6-74Y" firstAttribute="centerX" secondItem="6Yl-Gj-FPL" secondAttribute="centerX" id="rdD-zS-bfd"/>
+                                        <constraint firstItem="kks-rx-0k1" firstAttribute="centerX" secondItem="2Sh-Se-aPn" secondAttribute="centerX" id="wzG-Ja-Vzb"/>
+                                        <constraint firstItem="J1R-A1-N8M" firstAttribute="top" secondItem="kks-rx-0k1" secondAttribute="bottom" constant="8" id="zta-IA-3I2"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="InvestCell"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
