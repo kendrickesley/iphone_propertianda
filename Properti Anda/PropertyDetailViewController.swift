@@ -49,6 +49,18 @@ class PropertyDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func showInvest(sender: AnyObject){
+        self.performSegue(withIdentifier: "InvestBtnSegue", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "InvestBtnSegue" {
+            guard let object = self.property else { return }
+            let vc = segue.destination as! InvestViewController
+            vc.property = object
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationBar()

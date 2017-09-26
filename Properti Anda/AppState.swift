@@ -60,6 +60,14 @@ class AppStateModel{
         updateDatabase()
     }
     
+    func clearAuth(existing: AppState){
+        existing.email = ""
+        existing.first_name = ""
+        existing.last_name = ""
+        existing.token = ""
+        updateDatabase()
+    }
+    
     func saveAppState(email: String, firstName: String, lastName: String, token:String, hasLoaded:Bool, existing: AppState?=nil){
         let entity = NSEntityDescription.entity(forEntityName: "AppState", in: managedContext)!
         if let _ = existing{

@@ -66,6 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public lazy var preferencesNavigationController: PreferencesNavigationController = {
         return UIStoryboard.viewController(identifier: "PreferencesNavigationController") as! PreferencesNavigationController
     }()
+    
+    public lazy var investListViewContoller: AppNavigationController = {
+        return UIStoryboard.viewController(identifier: "InvestNavigationController") as! AppNavigationController
+    }()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

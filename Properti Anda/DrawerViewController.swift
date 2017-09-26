@@ -13,19 +13,26 @@ class DrawerViewController: UIViewController {
 
     @IBOutlet weak var drawerTableView:UITableView!
     @IBOutlet weak var drawerTableViewHeightConstraint:NSLayoutConstraint!
+    @IBOutlet weak var nameLabel: UILabel?
     let drawers:DrawerData = DrawerData()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var appState = AppStateModel.sharedInstance;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drawerTableView.delegate = self
         drawerTableView.dataSource = self
+        appState.getAppStates()
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
         drawerTableViewHeightConstraint.constant = drawerTableView.contentSize.height
+        let appState:AppState? = self.appState.getAppState()
+        if appState != nil {
+            nameLabel?.text = "Welcome,\n" + (appState?.first_name)! + " " + (appState?.last_name)!
+        }
     }
     
 
@@ -35,6 +42,7 @@ class DrawerViewController: UIViewController {
     }
     
     @IBAction func logOut(sender: Any){
+        self.appState.clearAuth(existing: self.appState.getAppState()!)
         let controller = UIStoryboard.viewController(identifier: "LoginController") as! LoginController
         appDelegate.window?.rootViewController = controller
     }
@@ -85,8 +93,8 @@ extension DrawerViewController: UITableViewDataSource{
         tableView.cellForRow(at: indexPath)!.backgroundColor = Color.grey.lighten2
         if section == "home"{
             handleHomeButton()
-        }else if section == "preferences"{
-//            handlePreferencesButton()
+        }else if section == "portfolio"{
+            handleInvestButton()
         }
         
 
@@ -99,6 +107,12 @@ extension DrawerViewController {
     fileprivate func handleHomeButton() {
 //        toolbarController?.transition(to: appDelegate.propertySplitViewController, completion: closeNavigationDrawer)
         navigationDrawerController?.transition(to: appDelegate.propertySplitViewController, completion: closeNavigationDrawer)
+    }
+    
+    @objc
+    fileprivate func handleInvestButton() {
+        //        toolbarController?.transition(to: appDelegate.propertySplitViewController, completion: closeNavigationDrawer)
+        navigationDrawerController?.transition(to: appDelegate.investListViewContoller, completion: closeNavigationDrawer)
     }
     
     @objc

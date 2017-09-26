@@ -158,6 +158,10 @@ class Property{
         }
     }
     
+    public func getID()->String{
+        return self.id
+    }
+    
     public func getDetail()->String{
         return self.detail
     }

@@ -14,9 +14,9 @@ class DrawerData{
     private var data:[Drawer] = []
     init(){
         self.data.append(Drawer(title: "Home", icon: Icon.home!, key: "home"))
-        self.data.append(Drawer(title: "Dashboard", icon: Icon.work!, key: "dashboard"))
+//        self.data.append(Drawer(title: "Dashboard", icon: Icon.work!, key: "dashboard"))
         self.data.append(Drawer(title: "Portfolio", icon: Icon.place!, key: "portfolio"))
-        self.data.append(Drawer(title: "Preferences", icon: Icon.settings!, key: "preferences"))
+//        self.data.append(Drawer(title: "Preferences", icon: Icon.settings!, key: "preferences"))
     }
     
     public func getAllData() -> [Drawer]{
