@@ -24,7 +24,7 @@ class RootViewController: UIViewController {
             self.performSegue(withIdentifier: "rootLoginSegue", sender: self);
         }else{
             self.performSegue(withIdentifier: "introSegue", sender: self);
-            self.appState.saveAppState(email: "", firstName: "", lastName: "", token: "", hasLoaded: true)
+            self.appState.saveAppState(email: "", firstName: "", lastName: "", token: "", hasLoaded: true, userID: "")
         }
     }
     

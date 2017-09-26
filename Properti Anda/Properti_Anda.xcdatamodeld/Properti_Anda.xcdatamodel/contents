@@ -6,8 +6,9 @@
         <attribute name="has_loaded" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AppState" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="AppState" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

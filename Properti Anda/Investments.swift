@@ -18,7 +18,30 @@ class Investments{
     }
     
     init(){
-        self.investments.append(Investment(address: "Help", price: 0, progressPrice: 0, completed: true, investors: 3, detail: "lol", imageURL: "a", id: "1", contribution: 3, status: "PENDING"))
+        //self.investments.append(Investment(address: "Help", price: 0, progressPrice: 0, completed: true, investors: 3, detail: "lol", imageURL: "a", id: "1", contribution: 3, status: "PENDING"))
+    }
+    
+    public func requestInvestments(callback: @escaping () -> Any){
+        let app:AppState? = AppStateModel.sharedInstance.getAppState()
+        let userID:String = app?.user_id ?? ""
+        let parameters: Parameters = [
+            "userid": userID,
+            "token": app?.token ?? "",
+            "mode": "all_owned_share"
+        ]
+        Alamofire.request("https://propertianda.com/php/market_requester.php", method: .post, parameters:parameters).responseJSON { response in
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let body = response.result.value {
+                let json = JSON(body)
+                self.parseInvestmentsJson(json: json, callback: callback)
+            }
+        }
+    }
+    
+    private func parseInvestmentsJson(json: JSON, callback: ()->Any){
+        print("\(json)")
+        let _ = callback()
     }
     
     

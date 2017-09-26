@@ -70,7 +70,7 @@ class LoginController: UIViewController {
                 print("Body: \(json)")
                 if json["status"].stringValue == "OK"{
                     self.errorLabel?.isHidden = true
-                    self.appState.saveAuth(email: json["email"].stringValue, firstName: json["first_name"].stringValue, lastName: json["last_name"].stringValue, token: json["token"].stringValue, existing: self.appState.getAppState()!)
+                    self.appState.saveAuth(email: json["email"].stringValue, firstName: json["first_name"].stringValue, lastName: json["last_name"].stringValue, token: json["token"].stringValue, userID: json["id"].stringValue, existing: self.appState.getAppState()!)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = AppNavigationDrawerController(rootViewController: appDelegate.propertySplitViewController, leftViewController: appDelegate.drawerViewController, rightViewController: nil)
 

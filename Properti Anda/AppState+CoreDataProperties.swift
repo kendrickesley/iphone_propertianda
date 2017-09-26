@@ -21,5 +21,6 @@ extension AppState {
     @NSManaged public var email: String?
     @NSManaged public var first_name: String?
     @NSManaged public var last_name: String?
+    @NSManaged public var user_id: String?
 
 }

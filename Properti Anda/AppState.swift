@@ -32,6 +32,11 @@ class AppStateModel{
         updateDatabase()
     }
     
+    func saveUserID(userID:String, existing:AppState){
+        existing.user_id = userID
+        updateDatabase()
+    }
+    
     func saveFirstName(firstName: String, existing: AppState){
         existing.first_name = firstName
         updateDatabase()
@@ -52,11 +57,12 @@ class AppStateModel{
         updateDatabase()
     }
     
-    func saveAuth(email: String, firstName: String, lastName: String, token: String, existing: AppState){
+    func saveAuth(email: String, firstName: String, lastName: String, token: String, userID:String, existing: AppState){
         existing.email = email;
         existing.first_name = firstName
         existing.last_name = lastName
         existing.token = token
+        existing.user_id = userID
         updateDatabase()
     }
     
@@ -65,10 +71,11 @@ class AppStateModel{
         existing.first_name = ""
         existing.last_name = ""
         existing.token = ""
+        existing.user_id = ""
         updateDatabase()
     }
     
-    func saveAppState(email: String, firstName: String, lastName: String, token:String, hasLoaded:Bool, existing: AppState?=nil){
+    func saveAppState(email: String, firstName: String, lastName: String, token:String, hasLoaded:Bool, userID: String, existing: AppState?=nil){
         let entity = NSEntityDescription.entity(forEntityName: "AppState", in: managedContext)!
         if let _ = existing{
             existing!.first_name = firstName
@@ -76,12 +83,14 @@ class AppStateModel{
             existing!.token = token
             existing!.email = email
             existing!.has_loaded = hasLoaded
+            existing!.user_id = userID
         }else{
             let appState = NSManagedObject(entity: entity, insertInto: managedContext)
             appState.setValue(firstName, forKeyPath:"first_name")
             appState.setValue(lastName, forKeyPath:"last_name")
             appState.setValue(email, forKeyPath:"email")
             appState.setValue(token, forKeyPath: "token")
+            appState.setValue(token, forKeyPath: "user_id")
             appState.setValue(hasLoaded, forKeyPath: "has_loaded")
             appStateDb.append(appState)
         }

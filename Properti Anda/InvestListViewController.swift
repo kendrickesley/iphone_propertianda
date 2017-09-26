@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import SwiftSpinner
 
 class InvestListViewController: UITableViewController {
     fileprivate var menuButton: IconButton!
@@ -22,6 +23,12 @@ class InvestListViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         prepareMenuButton()
         prepareNavigationItem()
+        SwiftSpinner.show("Requesting Information...")
+        investments.requestInvestments(callback: {
+            SwiftSpinner.hide()
+            self.tableView.reloadData()
+            return ""
+        })
     }
     
     fileprivate func prepareMenuButton() {
@@ -49,7 +56,20 @@ class InvestListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        var numOfSections: Int = 0
+        if(self.investments.getAllInvestments().count <= 0){
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
+            noDataLabel.text          = "No data available"
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
+            self.tableView.backgroundView  = noDataLabel
+            self.tableView.separatorStyle  = .none
+        }else{
+            self.tableView.separatorStyle = .singleLine
+            numOfSections            = 1
+            self.tableView.backgroundView = nil
+        }
+        return numOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
