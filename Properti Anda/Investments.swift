@@ -18,7 +18,7 @@ class Investments{
     }
     
     init(){
-        //self.investments.append(Investment(address: "Help", price: 0, progressPrice: 0, completed: true, investors: 3, detail: "lol", imageURL: "a", id: "1", contribution: 3, status: "PENDING"))
+        self.investments.append(Investment(address: "Help", price: 0, progressPrice: 0, completed: true, investors: 3, detail: "lol", imageURL: "a", id: "1", contribution: 3, status: "PENDING"))
     }
     
     public func requestInvestments(callback: @escaping () -> Any){

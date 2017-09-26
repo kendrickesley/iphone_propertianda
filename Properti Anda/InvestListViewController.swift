@@ -58,11 +58,13 @@ class InvestListViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         var numOfSections: Int = 0
         if(self.investments.getAllInvestments().count <= 0){
-            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
-            noDataLabel.text          = "No data available"
-            noDataLabel.textColor     = UIColor.black
-            noDataLabel.textAlignment = .center
-            self.tableView.backgroundView  = noDataLabel
+            let imageName = "noting"
+            let image = UIImage(named: imageName)
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
+            imageView.image = image
+            imageView.contentMode = UIViewContentMode.scaleAspectFill
+            imageView.clipsToBounds = true
+            self.tableView.backgroundView  = imageView
             self.tableView.separatorStyle  = .none
         }else{
             self.tableView.separatorStyle = .singleLine
