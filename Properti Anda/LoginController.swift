@@ -32,7 +32,7 @@ class LoginController: UIViewController {
                 "token": app?.token ?? "",
                 "mode": "check_token"
             ]
-            Alamofire.request("https://propertianda.com/php/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
+            Alamofire.request("https://propertianda.com/php_dev/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
                 print("Result: \(response.result)")                         // response serialization result
                 SwiftSpinner.hide()
                 if let body = response.result.value {
@@ -62,7 +62,7 @@ class LoginController: UIViewController {
             "password": passwordText?.text ?? "",
             "mode": "sign_in"
         ]
-        Alamofire.request("https://propertianda.com/php/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
+        Alamofire.request("https://propertianda.com/php_dev/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             SwiftSpinner.hide()
             if let body = response.result.value {

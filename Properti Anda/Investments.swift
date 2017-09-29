@@ -30,7 +30,7 @@ class Investments{
             "token": app?.token ?? "",
             "mode": "all_owned_share"
         ]
-        Alamofire.request("https://propertianda.com/php/market_requester.php", method: .post, parameters:parameters).responseJSON { response in
+        Alamofire.request("https://propertianda.com/php_dev/market_requester.php", method: .post, parameters:parameters).responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             
             if let body = response.result.value {

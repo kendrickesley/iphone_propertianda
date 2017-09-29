@@ -103,8 +103,7 @@ extension PropertyListViewController: UITableViewDataSource{
         cell.priceLabel?.text = property.getPrice(formatted: true)
         cell.progressPriceLabel?.text = property.getProgressPrice(formatted: true)
         cell.progressBar?.setProgress(Float(property.getProgressPrice() / property.getPrice()), animated: true)
-        cell.propertyImage?.image = UIImage(named: "logo")
-        cell.propertyImage?.downloadedFrom(link: property.getImageURL())
+        cell.propertyImage?.downloadedFrom(link: property.getImageURL(), contentMode: .scaleAspectFill)
         cell.bar?.backgroundColor = Color.white
         return cell
     }

@@ -22,7 +22,7 @@ class Properties{
     }
     
     public func requestProperties(callback: @escaping () -> Any){
-        Alamofire.request("https://propertianda.com/php/property_requester.php").responseJSON { response in
+        Alamofire.request("https://propertianda.com/php_dev/property_requester.php").responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             
             if let body = response.result.value {
@@ -101,7 +101,7 @@ class Property{
             "mode": "detail",
             "propertyid": self.id
         ]
-        Alamofire.request("https://propertianda.com/php/property_requester.php", method: .post, parameters: params).responseJSON { response in
+        Alamofire.request("https://propertianda.com/php_dev/property_requester.php", method: .post, parameters: params).responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             
             if let body = response.result.value {

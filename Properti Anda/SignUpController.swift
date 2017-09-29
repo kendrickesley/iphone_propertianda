@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Material
+import SwiftSpinner
 
 class SignUpController: UIViewController {
 
+    @IBOutlet weak var emailLabel: TextField?
+    @IBOutlet weak var passwordLabel: TextField?
+    @IBOutlet weak var passwordConfirmationLabel: TextField?
+    @IBOutlet weak var firstNameLabel: TextField?
+    @IBOutlet weak var lastNameLabel: TextField?
+    @IBOutlet weak var idLabel: TextField?
+    @IBOutlet weak var errorLabel: UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        errorLabel?.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -26,8 +37,39 @@ class SignUpController: UIViewController {
     }
 
     @IBAction func signUp(sender: Any){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = AppNavigationDrawerController(rootViewController: appDelegate.propertySplitViewController, leftViewController: appDelegate.drawerViewController, rightViewController: nil)
+        if passwordLabel?.text != passwordConfirmationLabel?.text {
+            errorLabel?.isHidden = false
+            errorLabel?.text = "Passwords do not match"
+            return
+        }
+        if (emailLabel?.text?.characters.count)! <= 0 || (passwordLabel?.text?.characters.count)! <= 0 || (firstNameLabel?.text?.characters.count)! <= 0 || (lastNameLabel?.text?.characters.count)! <= 0 || (idLabel?.text?.characters.count)! <= 0 {
+            errorLabel?.isHidden = false
+            errorLabel?.text = "You haven't fill all the required information"
+            return
+        }
+        errorLabel?.isHidden = true
+        SwiftSpinner.show("Singing up...")
+        let parameters: Parameters = [
+            "email": emailLabel?.text ?? "",
+            "password": passwordLabel?.text ?? "",
+            "fullname": (firstNameLabel?.text ?? "") + " " + (lastNameLabel?.text ?? ""),
+            "id_number": idLabel?.text ?? "",
+            "mode": "sign_up"
+        ]
+        Alamofire.request("https://propertianda.com/php_dev/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
+            print("Result: \(response.result)")                         // response serialization result
+            SwiftSpinner.hide()
+            if let body = response.result.value {
+                let json = JSON(body)
+                print("Body: \(json)")
+                if json["status"].stringValue == "OK"{
+                    self.errorLabel?.isHidden = true
+                    self.dismiss(animated: true, completion: nil)
+                }else{
+                    self.errorLabel?.isHidden = false
+                }
+            }
+        }
     }
     
     /*

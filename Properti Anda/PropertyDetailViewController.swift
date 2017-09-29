@@ -81,6 +81,12 @@ class PropertyDetailViewController: UIViewController {
         self.propertyDetail?.sizeToFit()
         self.propertyDetail?.text = ""
         self.showMoreBtn?.alpha = 0
+        if (property?.getPrice() ?? 0) - (property?.getProgressPrice() ?? 0) <= 0 && (property?.getPrice() ?? 0) != 0 {
+            self.investBtn?.isEnabled = false
+            self.investBtn?.title = "Sold"
+            self.investBtn?.backgroundColor = Color.grey.darken1
+            
+        }
         // Do any additional setup after loading the view.
     }
 
