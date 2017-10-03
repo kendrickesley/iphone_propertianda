@@ -21,29 +21,18 @@ class Properties{
 
     }
     
-    public func requestProperties(callback: @escaping () -> Any){
-        Alamofire.request("https://propertianda.com/php_dev/property_requester.php").responseJSON { response in
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let body = response.result.value {
-                let json = JSON(body)
-                self.parsePropertiesJson(json: json, callback: callback)
-            }
+    public func requestProperties(callback: @escaping () -> ()){
+        self.properties = []
+        PARequest.getProperties(){props in
+            self.properties = props
+            callback()
         }
-    }
-    
-    private func parsePropertiesJson(json: JSON, callback: ()->Any){
-        let properties: JSON = JSON(json["all_row"].arrayValue)
-        let images: JSON = JSON(json["images"].dictionaryValue)
-        for (_,property):(String, JSON) in properties {
-            self.properties.append(Property(address: property["address"].stringValue, price: property["property_price"].doubleValue, progressPrice: property["funded"].doubleValue / property["share_issued"].doubleValue * property["property_price"].doubleValue, completed: property["status"].intValue == 1, investors: property["investorCount"].intValue, detail: "", imageURL: images[property["id"].stringValue].arrayValue.count > 0 ? images[property["id"].stringValue].arrayValue[0]["pic_path"].stringValue : "", id: property["id"].stringValue))
-        }
-        let _ = callback()
     }
     
     public func getAllProperties()->[Property]{
         return properties
     }
+    
     public func getProperty(byIndex:Int)->Property{
         if byIndex < properties.count {
             return properties[byIndex]
@@ -64,12 +53,13 @@ class Property{
     var id:String = ""
     var latitude:Double = 0
     var longitude: Double = 0
+    var share:Int = 0
     
     init(){}
     init(address:String){
         self.address = address
     }
-    init(address:String, price:Double, progressPrice:Double, completed:Bool, investors:Int, detail:String, id:String){
+    init(address:String, price:Double, progressPrice:Double, completed:Bool, investors:Int, detail:String, id:String, share: Int){
         self.address = address
         self.price = price
         self.progressPrice = progressPrice
@@ -77,10 +67,11 @@ class Property{
         self.investors = investors
         self.detail = detail
         self.id = id
+        self.share = share
     }
     
-    convenience init(address:String, price:Double, progressPrice:Double, completed:Bool, investors:Int, detail:String, imageURL:String, id: String){
-        self.init(address:address, price:price, progressPrice:progressPrice, completed:completed, investors: investors, detail:detail, id: id)
+    convenience init(address:String, price:Double, progressPrice:Double, completed:Bool, investors:Int, detail:String, imageURL:String, id: String, share: Int){
+        self.init(address:address, price:price, progressPrice:progressPrice, completed:completed, investors: investors, detail:detail, id: id, share:share)
         self.imageURL = imageURL
     }
     
@@ -97,37 +88,18 @@ class Property{
     }
     
     public func requestDetail(callback: @escaping () -> Any){
-        let params = [
-            "mode": "detail",
-            "propertyid": self.id
-        ]
-        Alamofire.request("https://propertianda.com/php_dev/property_requester.php", method: .post, parameters: params).responseJSON { response in
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let body = response.result.value {
-                let json = JSON(body)
-                self.parseDetailJson(json: json, callback: callback)
-            }
+        PARequest.getProperty(id: self.id){prop in
+            self.detail = prop.getDetail()
+            self.latitude = prop.getLatitude()
+            self.longitude = prop.getLongitude()
         }
     }
     
-    private func parseDetailJson(json: JSON, callback: ()->Any){
-        let properties: JSON = JSON(json["all_row"].arrayValue)
-        if properties.count <= 0 {
-            return
-        }
-        let property = JSON(properties[0].dictionaryValue)
-        self.detail = property["property_detail_content"].stringValue
-        self.latitude = property["latitude"].doubleValue
-        self.longitude = property["longitude"].doubleValue
-        let _ = callback()
-    }
-    
-    public func getPrice(formatted: Bool)->String{
+    public func getPrice(formatted: Bool, independent: Bool = false)->String{
         if formatted {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = NumberFormatter.Style.decimal
-            return "$" + numberFormatter.string(from: NSNumber(value:self.price / 10560))!
+            return (independent ? "" : "of ") + "$" + numberFormatter.string(from: NSNumber(value:self.price / 10560))!
         }else{
             return String(self.price)
         }

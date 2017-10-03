@@ -124,7 +124,7 @@ class PropertyDetailViewController: UIViewController {
         })
         navigationItem.detail = self.property?.getAddress() ?? ""
         self.addressLabel?.text = self.property?.getAddress() ?? "Default Address"
-        self.priceLabel?.text = self.property?.getPrice(formatted: true) ?? ""
+        self.priceLabel?.text = self.property?.getPrice(formatted: true, independent: true) ?? ""
         self.fundedLabel?.text = self.property?.getProgressPrice(formatted: true, independent: true)
         self.investorsLabel?.text = self.property?.getInvestors() ?? "0"
         self.propertyImage?.downloadedFrom(link: (self.property?.getImageURL())!)

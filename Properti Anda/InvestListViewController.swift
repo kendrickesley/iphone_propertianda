@@ -21,14 +21,20 @@ class InvestListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+    }
+    
+    override func viewDidAppear(_ animated:Bool){
+        super.viewDidAppear(animated)
         prepareMenuButton()
         prepareNavigationItem()
         SwiftSpinner.show("Requesting Information...")
-        investments.requestInvestments(callback: {
+        investments.requestInvestments(){_ in
             SwiftSpinner.hide()
-            self.tableView.reloadData()
-            return ""
-        })
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     fileprivate func prepareMenuButton() {
@@ -83,6 +89,11 @@ class InvestListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell:InvestCell = tableView.dequeueReusableCell(withIdentifier: "InvestCell") as? InvestCell else {return InvestCell()}
         _ = self.investments.getInvestment(byIndex: indexPath.row)
+        let investment = self.investments.getInvestment(byIndex: indexPath.row)
+        cell.addressLabel?.text = investment.getAddress()
+        cell.priceLabel?.text = investment.getPrice(formatted: true, independent: true)
+        cell.contributionLabel?.text = investment.getContribution(formatted: true)
+        cell.propertyImage?.downloadedFrom(link: investment.getImageURL(), contentMode: .scaleAspectFill)
         return cell
     }
 

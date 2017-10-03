@@ -49,25 +49,14 @@ class SignUpController: UIViewController {
         }
         errorLabel?.isHidden = true
         SwiftSpinner.show("Singing up...")
-        let parameters: Parameters = [
-            "email": emailLabel?.text ?? "",
-            "password": passwordLabel?.text ?? "",
-            "fullname": (firstNameLabel?.text ?? "") + " " + (lastNameLabel?.text ?? ""),
-            "id_number": idLabel?.text ?? "",
-            "mode": "sign_up"
-        ]
-        Alamofire.request("https://propertianda.com/php_dev/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
-            print("Result: \(response.result)")                         // response serialization result
+        PARequest.register(email: emailLabel?.text ?? "", password: passwordLabel?.text ?? "", firstName: firstNameLabel?.text ?? "", lastName: lastNameLabel?.text ?? "", id_number: idLabel?.text ?? ""){success in
             SwiftSpinner.hide()
-            if let body = response.result.value {
-                let json = JSON(body)
-                print("Body: \(json)")
-                if json["status"].stringValue == "OK"{
-                    self.errorLabel?.isHidden = true
-                    self.dismiss(animated: true, completion: nil)
-                }else{
-                    self.errorLabel?.isHidden = false
-                }
+            if success {
+                self.errorLabel?.isHidden = true
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                self.errorLabel?.isHidden = false
+                self.errorLabel?.text = "Whoops! The email is already been used"
             }
         }
     }

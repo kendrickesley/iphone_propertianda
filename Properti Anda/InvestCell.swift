@@ -12,12 +12,9 @@ import Material
 class InvestCell: UITableViewCell {
 
     @IBOutlet weak var addressLabel:UILabel?
-    @IBOutlet weak var progressPriceLabel:UILabel?
+    @IBOutlet weak var contributionLabel:UILabel?
     @IBOutlet weak var priceLabel:UILabel?
-    @IBOutlet weak var investButton:FlatButton?
-    @IBOutlet weak var progressBar:UIProgressView?
     @IBOutlet weak var propertyImage:UIImageView?
-    @IBOutlet weak var bar:Bar?
     
     override func awakeFromNib() {
         super.awakeFromNib()

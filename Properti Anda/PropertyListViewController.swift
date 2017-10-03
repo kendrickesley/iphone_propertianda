@@ -20,17 +20,24 @@ class PropertyListViewController: UIViewController {
         SwiftSpinner.setTitleFont(UIFont(name: "Helvetica Neue", size: 22.0))
         propertyTableView.delegate = self
         propertyTableView.dataSource = self
-        prepareMenuButton()
-        prepareNavigationItem()
-        SwiftSpinner.show("Requesting properties...")
-        properties.requestProperties(callback: {
-            SwiftSpinner.hide()
-            self.propertyTableView.reloadData()
-            return ""
-        })
-        // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated:Bool){
+        super.viewDidAppear(animated)
+        prepareMenuButton()
+        prepareNavigationItem()
+        DispatchQueue.main.async {
+            self.propertyTableView.reloadData()
+        }
+        SwiftSpinner.show("Requesting properties...")
+        properties.requestProperties(){_ in
+            DispatchQueue.main.async {
+                SwiftSpinner.hide()
+                self.propertyTableView.reloadData()
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -101,7 +108,7 @@ extension PropertyListViewController: UITableViewDataSource{
         let property = self.properties.getProperty(byIndex: indexPath.row)
         cell.addressLabel?.text = property.getAddress()
         cell.priceLabel?.text = property.getPrice(formatted: true)
-        cell.progressPriceLabel?.text = property.getProgressPrice(formatted: true)
+        cell.progressPriceLabel?.text = property.getProgressPrice(formatted: true, independent: true)
         cell.progressBar?.setProgress(Float(property.getProgressPrice() / property.getPrice()), animated: true)
         cell.propertyImage?.downloadedFrom(link: property.getImageURL(), contentMode: .scaleAspectFill)
         cell.bar?.backgroundColor = Color.white

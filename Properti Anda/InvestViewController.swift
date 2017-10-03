@@ -25,35 +25,19 @@ class InvestViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func invest(){
         
-        SwiftSpinner.show("Singing up...")
-        let app:AppState? = AppStateModel.sharedInstance.getAppState()
-        let userID:String = app?.user_id ?? ""
-        let email:String = app?.email ?? ""
-        let token: String = app?.token ?? ""
-        let parameters: Parameters = [
-            "email": email,
-            "shares": Double(investText?.text ?? "0")! * 10560 / (property?.price ?? 1) * 1000,
-            "propertyid": property?.id ?? "",
-            "token": token,
-            "userid": userID,
-            "mode": "company_buy"
-        ]
-        Alamofire.request("https://propertianda.com/php_dev/market_requester.php", method: .post, parameters: parameters).responseJSON { response in
-            print("Result: \(response.result)")                         // response serialization result
+        SwiftSpinner.show("Investing...")
+        var share: Double = Double(investText?.text ?? "0")! * 10560
+        share /= (property?.price ?? 1)
+        share *= Double(property?.share ?? 1)
+        PARequest.invest(share: Int(share), property_id: property?.id ?? "", wallet_request: Double(investText?.text ?? "0")! * 10560){success in
             SwiftSpinner.hide()
-            if let body = response.result.value {
-                let json = JSON(body)
-                print("Body: \(json)")
-                if json["status"].stringValue == "OK"{
-                    let alert = UIAlertController(title: "Success!", message: "You are one of the investors now", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
-                        (alert: UIAlertAction!) in self.navigationController?.popViewController(animated: true)
-                    }
-                    ))
-                    self.present(alert, animated: true, completion: nil)
-                }else{
-                    
+            if success {
+                let alert = UIAlertController(title: "Success!", message: "You are one of the investors now", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                    (alert: UIAlertAction!) in self.navigationController?.popViewController(animated: true)
                 }
+                ))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

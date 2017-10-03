@@ -228,9 +228,9 @@
                                             <outlet property="addressLabel" destination="F8l-jf-Ln6" id="7RA-9M-7yo"/>
                                             <outlet property="bar" destination="igb-dX-Wsq" id="f1u-Iu-9FE"/>
                                             <outlet property="investButton" destination="kFq-a8-QMJ" id="9ci-ps-a04"/>
-                                            <outlet property="priceLabel" destination="bBP-ee-Ftt" id="h0K-nA-7So"/>
+                                            <outlet property="priceLabel" destination="a30-9d-cAM" id="Off-fn-R3A"/>
                                             <outlet property="progressBar" destination="2ec-Jh-byd" id="XRp-yW-fON"/>
-                                            <outlet property="progressPriceLabel" destination="a30-9d-cAM" id="MFL-an-pQl"/>
+                                            <outlet property="progressPriceLabel" destination="bBP-ee-Ftt" id="bMm-rz-h0K"/>
                                             <outlet property="propertyImage" destination="ddw-8W-dLL" id="xbC-XC-qXO"/>
                                         </connections>
                                     </tableViewCell>
@@ -386,7 +386,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTP-gm-EUC">
-                                        <rect key="frame" x="15" y="597" width="42" height="21"/>
+                                        <rect key="frame" x="15" y="597" width="52" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -404,13 +404,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="132" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-50-1cx">
-                                        <rect key="frame" x="159" y="574" width="29" height="20"/>
+                                        <rect key="frame" x="168" y="574" width="29" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Investors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wta-pK-Qm4">
-                                        <rect key="frame" x="159" y="597" width="75" height="21"/>
+                                        <rect key="frame" x="168" y="597" width="75" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -418,6 +418,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="sGU-50-1cx" firstAttribute="leading" secondItem="Q28-jZ-Rwg" secondAttribute="trailing" constant="20" id="0aS-ip-geY"/>
                                     <constraint firstItem="P9j-Kw-nfO" firstAttribute="top" secondItem="bRj-bW-MwJ" secondAttribute="bottom" constant="15" id="1Nr-VZ-7fm"/>
                                     <constraint firstItem="bRj-bW-MwJ" firstAttribute="leading" secondItem="7FN-GU-1Th" secondAttribute="leading" id="4LS-xe-HrD"/>
                                     <constraint firstItem="kN0-mv-WLr" firstAttribute="top" secondItem="xaF-zy-oAz" secondAttribute="bottom" constant="10" id="4cz-g6-g7c"/>
@@ -427,14 +428,21 @@
                                     <constraint firstItem="gwE-hL-Acy" firstAttribute="top" secondItem="kN0-mv-WLr" secondAttribute="bottom" constant="15" id="8Ve-N3-6y5"/>
                                     <constraint firstAttribute="trailing" secondItem="xaF-zy-oAz" secondAttribute="trailing" constant="15" id="E0f-Kg-bJS"/>
                                     <constraint firstItem="hnM-FD-oSn" firstAttribute="top" secondItem="sTP-gm-EUC" secondAttribute="bottom" constant="20" id="EZ4-ob-gbE"/>
-                                    <constraint firstItem="sGU-50-1cx" firstAttribute="leading" secondItem="dkC-Mc-wci" secondAttribute="trailing" constant="20" id="KUI-OW-7i0"/>
+                                    <constraint firstItem="dkC-Mc-wci" firstAttribute="leading" secondItem="sTP-gm-EUC" secondAttribute="trailing" constant="20" id="GHf-9c-oUX"/>
+                                    <constraint firstItem="sGU-50-1cx" firstAttribute="leading" secondItem="Q28-jZ-Rwg" secondAttribute="trailing" constant="20" id="Hhr-os-Ua0">
+                                        <variation key="widthClass=regular" constant="250"/>
+                                    </constraint>
+                                    <constraint firstItem="sGU-50-1cx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dkC-Mc-wci" secondAttribute="trailing" constant="20" id="KUI-OW-7i0"/>
                                     <constraint firstItem="gwE-hL-Acy" firstAttribute="leading" secondItem="7FN-GU-1Th" secondAttribute="leading" id="Mi8-MZ-ac3"/>
                                     <constraint firstItem="Q28-jZ-Rwg" firstAttribute="leading" secondItem="dkC-Mc-wci" secondAttribute="leading" id="N0T-Rj-iMY"/>
+                                    <constraint firstItem="dkC-Mc-wci" firstAttribute="leading" secondItem="sTP-gm-EUC" secondAttribute="trailing" constant="20" id="PBw-Ki-jjs">
+                                        <variation key="widthClass=regular" constant="250"/>
+                                    </constraint>
                                     <constraint firstItem="wta-pK-Qm4" firstAttribute="leading" secondItem="sGU-50-1cx" secondAttribute="leading" id="Thq-Kl-0n4"/>
                                     <constraint firstAttribute="bottom" secondItem="hnM-FD-oSn" secondAttribute="bottom" constant="30" id="W6E-8u-vcZ"/>
                                     <constraint firstItem="P9j-Kw-nfO" firstAttribute="leading" secondItem="7FN-GU-1Th" secondAttribute="leading" constant="15" id="Y2J-eI-edd"/>
                                     <constraint firstItem="2tc-WO-oBY" firstAttribute="top" secondItem="gwE-hL-Acy" secondAttribute="bottom" constant="15" id="Ywk-6q-r7H"/>
-                                    <constraint firstItem="dkC-Mc-wci" firstAttribute="leading" secondItem="2tc-WO-oBY" secondAttribute="trailing" constant="20" id="ZjL-tD-yQU"/>
+                                    <constraint firstItem="dkC-Mc-wci" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2tc-WO-oBY" secondAttribute="trailing" constant="20" id="ZjL-tD-yQU"/>
                                     <constraint firstAttribute="trailing" secondItem="gwE-hL-Acy" secondAttribute="trailing" id="aWt-fU-pYn"/>
                                     <constraint firstItem="sTP-gm-EUC" firstAttribute="top" secondItem="2tc-WO-oBY" secondAttribute="bottom" constant="3" id="dGx-9t-N1A"/>
                                     <constraint firstItem="sTP-gm-EUC" firstAttribute="leading" secondItem="2tc-WO-oBY" secondAttribute="leading" id="gcr-wd-TtH"/>
@@ -446,6 +454,19 @@
                                     <constraint firstItem="kN0-mv-WLr" firstAttribute="centerX" secondItem="7FN-GU-1Th" secondAttribute="centerX" id="xAK-Ux-udr"/>
                                     <constraint firstItem="wta-pK-Qm4" firstAttribute="centerY" secondItem="Q28-jZ-Rwg" secondAttribute="centerY" id="za3-SR-S6S"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GHf-9c-oUX"/>
+                                        <exclude reference="Hhr-os-Ua0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="GHf-9c-oUX"/>
+                                        <exclude reference="0aS-ip-geY"/>
+                                        <include reference="Hhr-os-Ua0"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -688,7 +709,7 @@
         <scene sceneID="xXx-Gz-ErT">
             <objects>
                 <navigationController id="Zzf-fh-doz" customClass="AppNavigationController" customModule="Properti_Anda" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2uz-gm-CPF" customClass="NavigationBar" customModule="Material">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2uz-gm-CPF" customClass="NavigationBar" customModule="Material">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2321,7 +2342,7 @@ Anda</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whoops! Something went wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebI-d2-haP">
-                                <rect key="frame" x="83" y="520" width="248.33333333333331" height="20"/>
+                                <rect key="frame" x="82.666666666666686" y="520" width="248.66666666666663" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.9510807966" green="0.066107034869999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2592,7 +2613,7 @@ Anda</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="377" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xwd-oz-X5E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95913617230000003" green="0.95913617230000003" blue="0.95913617230000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="pnc-5h-Uak">
                             <rect key="frame" x="0.0" y="405" width="414" height="44"/>
@@ -2679,6 +2700,12 @@ Anda</string>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="addressLabel" destination="2Sh-Se-aPn" id="hwx-sP-tBj"/>
+                                    <outlet property="contributionLabel" destination="kks-rx-0k1" id="wHU-g3-fQx"/>
+                                    <outlet property="priceLabel" destination="RlS-pf-Wpt" id="OvY-4B-KcO"/>
+                                    <outlet property="propertyImage" destination="2Od-N6-74Y" id="aP2-3T-nua"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <userDefinedRuntimeAttributes>
@@ -2700,7 +2727,7 @@ Anda</string>
             <objects>
                 <navigationController storyboardIdentifier="PreferencesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wSh-lc-kkt" customClass="PreferencesNavigationController" customModule="Properti_Anda" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cMM-wv-K1B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cMM-wv-K1B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2718,7 +2745,7 @@ Anda</string>
             <objects>
                 <navigationController storyboardIdentifier="InvestNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="1rA-v2-xSB" customClass="AppNavigationController" customModule="Properti_Anda" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="63F-lp-R6T" customClass="NavigationBar" customModule="Material">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="63F-lp-R6T" customClass="NavigationBar" customModule="Material">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

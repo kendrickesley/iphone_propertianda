@@ -43,6 +43,12 @@
 		EEC7735D1F48132300B22C15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC7735B1F48132300B22C15 /* LaunchScreen.storyboard */; };
 		EEC773681F48132300B22C15 /* Properti_AndaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC773671F48132300B22C15 /* Properti_AndaTests.swift */; };
 		EEC773731F48132300B22C15 /* Properti_AndaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC773721F48132300B22C15 /* Properti_AndaUITests.swift */; };
+		EEE160C91F833A09001BEE71 /* PARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE160C81F833A09001BEE71 /* PARequest.swift */; };
+		EEE160D51F8340F5001BEE71 /* PARequest+Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE160D41F8340F5001BEE71 /* PARequest+Investment.swift */; };
+		EEE160D71F834116001BEE71 /* PARequest+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE160D61F834116001BEE71 /* PARequest+Property.swift */; };
+		EEE160DB1F8341C4001BEE71 /* PARequest+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE160DA1F8341C4001BEE71 /* PARequest+Login.swift */; };
+		EEE160DD1F8341E3001BEE71 /* PARequest+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE160DC1F8341E3001BEE71 /* PARequest+Register.swift */; };
+		EEE160DF1F83493C001BEE71 /* PARequest+Invest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE160DE1F83493C001BEE71 /* PARequest+Invest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +116,12 @@
 		EEC7736E1F48132300B22C15 /* Properti AndaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Properti AndaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC773721F48132300B22C15 /* Properti_AndaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properti_AndaUITests.swift; sourceTree = "<group>"; };
 		EEC773741F48132300B22C15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEE160C81F833A09001BEE71 /* PARequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PARequest.swift; sourceTree = "<group>"; };
+		EEE160D41F8340F5001BEE71 /* PARequest+Investment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PARequest+Investment.swift"; sourceTree = "<group>"; };
+		EEE160D61F834116001BEE71 /* PARequest+Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PARequest+Property.swift"; sourceTree = "<group>"; };
+		EEE160DA1F8341C4001BEE71 /* PARequest+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PARequest+Login.swift"; sourceTree = "<group>"; };
+		EEE160DC1F8341E3001BEE71 /* PARequest+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PARequest+Register.swift"; sourceTree = "<group>"; };
+		EEE160DE1F83493C001BEE71 /* PARequest+Invest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PARequest+Invest.swift"; sourceTree = "<group>"; };
 		F07E515077FB8EBAA0F42AC7 /* Pods-Properti AndaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Properti AndaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Properti AndaUITests/Pods-Properti AndaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,11 +179,10 @@
 		EEBE3C131F4C05610029BA0B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EE51512C1F676DB9000EBD26 /* AppState+CoreDataClass.swift */,
-				EE51512D1F676DB9000EBD26 /* AppState+CoreDataProperties.swift */,
+				EEE160D31F83408A001BEE71 /* CoreData */,
+				EEE160D21F834082001BEE71 /* Facade */,
 				EEA716891F4AD8620035D829 /* DrawerData.swift */,
 				EEBE3C141F4C05820029BA0B /* Properties.swift */,
-				EE51512A1F676B04000EBD26 /* AppState.swift */,
 				EE27A2411F7A52160073BDD2 /* Investments.swift */,
 			);
 			name = Models;
@@ -212,6 +223,8 @@
 		EEC7734E1F48132300B22C15 /* Properti Anda */ = {
 			isa = PBXGroup;
 			children = (
+				EEE160CB1F833FA2001BEE71 /* Screens */,
+				EEE160CA1F833F70001BEE71 /* Navigation */,
 				EEBE3C161F4C17EA0029BA0B /* Cells */,
 				EEBE3C131F4C05610029BA0B /* Models */,
 				EEC7734F1F48132300B22C15 /* AppDelegate.swift */,
@@ -222,21 +235,6 @@
 				EEC7735B1F48132300B22C15 /* LaunchScreen.storyboard */,
 				EEC7735E1F48132300B22C15 /* Info.plist */,
 				EEC773561F48132300B22C15 /* Properti_Anda.xcdatamodeld */,
-				EE9DCFDF1F4836E2009CA7E2 /* IntroPageController.swift */,
-				EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */,
-				EEA7167D1F4A6AAC0035D829 /* SignUpController.swift */,
-				EEA7167F1F4A71290035D829 /* LoginController.swift */,
-				EEA716831F4AD0120035D829 /* DrawerViewController.swift */,
-				EEA716851F4AD12D0035D829 /* AppNavigationDrawerController.swift */,
-				EEA7168F1F4B9FFA0035D829 /* AppToolbarController.swift */,
-				EEA716911F4BA3A50035D829 /* PreferencesViewController.swift */,
-				EEBE3C0B1F4BF6C50029BA0B /* PropertyListViewController.swift */,
-				EEBE3C0D1F4BF7280029BA0B /* PropertySplitViewController.swift */,
-				EEBE3C0F1F4BFC2A0029BA0B /* AppNavigationController.swift */,
-				EEBE3C111F4BFF4B0029BA0B /* PropertyDetailViewController.swift */,
-				EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */,
-				EE2F6EC81F7A14C400982D4D /* InvestViewController.swift */,
-				EE2F6ECC1F7A232500982D4D /* InvestListViewController.swift */,
 			);
 			path = "Properti Anda";
 			sourceTree = "<group>";
@@ -257,6 +255,106 @@
 				EEC773741F48132300B22C15 /* Info.plist */,
 			);
 			path = "Properti AndaUITests";
+			sourceTree = "<group>";
+		};
+		EEE160CA1F833F70001BEE71 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EEBE3C0F1F4BFC2A0029BA0B /* AppNavigationController.swift */,
+				EEA7168F1F4B9FFA0035D829 /* AppToolbarController.swift */,
+				EEA716851F4AD12D0035D829 /* AppNavigationDrawerController.swift */,
+				EEA716831F4AD0120035D829 /* DrawerViewController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		EEE160CB1F833FA2001BEE71 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EEE160D11F83400E001BEE71 /* Preferences */,
+				EEE160D01F833FED001BEE71 /* Investments */,
+				EEE160CF1F833FD6001BEE71 /* Properties */,
+				EEE160CE1F833FCF001BEE71 /* Login */,
+				EEE160CD1F833FBF001BEE71 /* SignUp */,
+				EEE160CC1F833FB1001BEE71 /* Introduction */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		EEE160CC1F833FB1001BEE71 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				EE9DCFE11F483812009CA7E2 /* IntroViewController.swift */,
+				EE9DCFDF1F4836E2009CA7E2 /* IntroPageController.swift */,
+			);
+			name = Introduction;
+			sourceTree = "<group>";
+		};
+		EEE160CD1F833FBF001BEE71 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7167D1F4A6AAC0035D829 /* SignUpController.swift */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
+		EEE160CE1F833FCF001BEE71 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7167F1F4A71290035D829 /* LoginController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		EEE160CF1F833FD6001BEE71 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				EE2F6EC81F7A14C400982D4D /* InvestViewController.swift */,
+				EEBE3C111F4BFF4B0029BA0B /* PropertyDetailViewController.swift */,
+				EEBE3C0D1F4BF7280029BA0B /* PropertySplitViewController.swift */,
+				EEBE3C0B1F4BF6C50029BA0B /* PropertyListViewController.swift */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		EEE160D01F833FED001BEE71 /* Investments */ = {
+			isa = PBXGroup;
+			children = (
+				EE2F6ECC1F7A232500982D4D /* InvestListViewController.swift */,
+			);
+			name = Investments;
+			sourceTree = "<group>";
+		};
+		EEE160D11F83400E001BEE71 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				EEA716911F4BA3A50035D829 /* PreferencesViewController.swift */,
+				EE2BD0311F5281CE000E7A16 /* PreferencesNavigationController.swift */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		EEE160D21F834082001BEE71 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				EEE160C81F833A09001BEE71 /* PARequest.swift */,
+				EEE160D41F8340F5001BEE71 /* PARequest+Investment.swift */,
+				EEE160D61F834116001BEE71 /* PARequest+Property.swift */,
+				EEE160DA1F8341C4001BEE71 /* PARequest+Login.swift */,
+				EEE160DC1F8341E3001BEE71 /* PARequest+Register.swift */,
+				EEE160DE1F83493C001BEE71 /* PARequest+Invest.swift */,
+			);
+			name = Facade;
+			sourceTree = "<group>";
+		};
+		EEE160D31F83408A001BEE71 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EE51512A1F676B04000EBD26 /* AppState.swift */,
+				EE51512D1F676DB9000EBD26 /* AppState+CoreDataProperties.swift */,
+				EE51512C1F676DB9000EBD26 /* AppState+CoreDataClass.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,6 +666,7 @@
 				EEC773521F48132300B22C15 /* ViewController.swift in Sources */,
 				EE9DCFE01F4836E2009CA7E2 /* IntroPageController.swift in Sources */,
 				EEA7167E1F4A6AAC0035D829 /* SignUpController.swift in Sources */,
+				EEE160D51F8340F5001BEE71 /* PARequest+Investment.swift in Sources */,
 				EEA716861F4AD12D0035D829 /* AppNavigationDrawerController.swift in Sources */,
 				EE27A2421F7A52160073BDD2 /* Investments.swift in Sources */,
 				EE2F6ECD1F7A232500982D4D /* InvestListViewController.swift in Sources */,
@@ -584,15 +683,20 @@
 				EEA716901F4B9FFA0035D829 /* AppToolbarController.swift in Sources */,
 				EE2F6EC91F7A14C400982D4D /* InvestViewController.swift in Sources */,
 				EE9DCFE21F483812009CA7E2 /* IntroViewController.swift in Sources */,
+				EEE160DD1F8341E3001BEE71 /* PARequest+Register.swift in Sources */,
 				EEA716801F4A71290035D829 /* LoginController.swift in Sources */,
+				EEE160D71F834116001BEE71 /* PARequest+Property.swift in Sources */,
 				EE51512E1F676DB9000EBD26 /* AppState+CoreDataClass.swift in Sources */,
 				EEA716841F4AD0120035D829 /* DrawerViewController.swift in Sources */,
 				EE51512B1F676B04000EBD26 /* AppState.swift in Sources */,
 				EE51512F1F676DB9000EBD26 /* AppState+CoreDataProperties.swift in Sources */,
+				EEE160C91F833A09001BEE71 /* PARequest.swift in Sources */,
 				EEA7168C1F4AED2C0035D829 /* DrawerCell.swift in Sources */,
 				EE9DCFD81F4820FE009CA7E2 /* RootViewController.swift in Sources */,
 				EEC773581F48132300B22C15 /* Properti_Anda.xcdatamodeld in Sources */,
+				EEE160DF1F83493C001BEE71 /* PARequest+Invest.swift in Sources */,
 				EE2BD0321F5281CE000E7A16 /* PreferencesNavigationController.swift in Sources */,
+				EEE160DB1F8341C4001BEE71 /* PARequest+Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
