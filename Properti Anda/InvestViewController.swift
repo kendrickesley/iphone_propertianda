@@ -24,7 +24,7 @@ class InvestViewController: UIViewController, UITextFieldDelegate {
     var defaultColor: UIColor?
     
     @IBAction func invest(){
-        
+        //invest request through a facade
         SwiftSpinner.show("Investing...")
         var share: Double = Double(investText?.text ?? "0")! * 10560
         share /= (property?.price ?? 1)

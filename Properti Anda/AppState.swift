@@ -9,7 +9,15 @@
 import Foundation
 import CoreData
 import UIKit
-
+/*
+ AppState has the following information:
+ 1. Email
+ 2. UserID
+ 3. Token
+ 4. First Name
+ 5. Last Name
+ 6. Flag if the application has loaded before / not
+ */
 class AppStateModel{
     static let sharedInstance = AppStateModel()
     private init(){
@@ -19,6 +27,7 @@ class AppStateModel{
     let managedContext: NSManagedObjectContext
     var appStateDb = [NSManagedObject]()
     
+    //update the database
     func updateDatabase(){
         do{
             try managedContext.save()
@@ -52,11 +61,13 @@ class AppStateModel{
         updateDatabase()
     }
     
+    //change the flag of the first loading
     func saveHasLoaded(hasLoaded: Bool, existing: AppState){
         existing.has_loaded = hasLoaded
         updateDatabase()
     }
     
+    //Save a complete auth flow
     func saveAuth(email: String, firstName: String, lastName: String, token: String, userID:String, existing: AppState){
         existing.email = email;
         existing.first_name = firstName
@@ -66,6 +77,7 @@ class AppStateModel{
         updateDatabase()
     }
     
+    //Reset the existing data
     func clearAuth(existing: AppState){
         existing.email = ""
         existing.first_name = ""
@@ -75,6 +87,7 @@ class AppStateModel{
         updateDatabase()
     }
     
+    //create or update the appState
     func saveAppState(email: String, firstName: String, lastName: String, token:String, hasLoaded:Bool, userID: String, existing: AppState?=nil){
         let entity = NSEntityDescription.entity(forEntityName: "AppState", in: managedContext)!
         if let _ = existing{
@@ -115,6 +128,7 @@ class AppStateModel{
         }
     }
     
+    //delete the appstate
     func deleteAppState(_ appState: AppState){
         managedContext.delete(appState)
         updateDatabase()

@@ -11,7 +11,10 @@ import Alamofire
 import SwiftyJSON
 import SwiftSpinner
 
+//facade to login a user
 extension PARequest{
+    
+    //login using email and password
     public static func login(email:String, password:String, callback: @escaping (_ success:Bool)->()){
         let appState = AppStateModel.sharedInstance
         appState.getAppStates()
@@ -20,6 +23,7 @@ extension PARequest{
             "password": password,
             "mode": "sign_in"
         ]
+        //request to the REST based API with the given parameters
         Alamofire.request("https://propertianda.com/php_dev/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             
@@ -35,6 +39,7 @@ extension PARequest{
 
     }
     
+    //Login using token
     public static func token_login(callback: @escaping (_ success: Bool)->()){
         let appState = AppStateModel.sharedInstance
         appState.getAppStates()
@@ -46,6 +51,7 @@ extension PARequest{
                 "token": app?.token ?? "",
                 "mode": "check_token"
             ]
+            //request to the REST based API with the given parameters
             Alamofire.request("https://propertianda.com/php_dev/user_auth.php", method: .post, parameters: parameters).responseJSON { response in
                 print("Result: \(response.result)")                         // response serialization result
                 SwiftSpinner.hide()

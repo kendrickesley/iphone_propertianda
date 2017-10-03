@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//Class to manage all the properties
 class Properties{
     var properties:[Property] = []
     
@@ -21,6 +22,7 @@ class Properties{
 
     }
     
+    //request the property by a facade
     public func requestProperties(callback: @escaping () -> ()){
         self.properties = []
         PARequest.getProperties(){props in
@@ -29,10 +31,12 @@ class Properties{
         }
     }
     
+    //get all properties
     public func getAllProperties()->[Property]{
         return properties
     }
     
+    //get a property by an index
     public func getProperty(byIndex:Int)->Property{
         if byIndex < properties.count {
             return properties[byIndex]
@@ -42,7 +46,9 @@ class Properties{
     }
 }
 
+//class to manage a single property
 class Property{
+    //required attributes
     var address:String = ""
     var price:Double = 0
     var completed:Bool = false
@@ -56,9 +62,13 @@ class Property{
     var share:Int = 0
     
     init(){}
+    
+    //simplest initialization
     init(address:String){
         self.address = address
     }
+    
+    //initialization without image
     init(address:String, price:Double, progressPrice:Double, completed:Bool, investors:Int, detail:String, id:String, share: Int){
         self.address = address
         self.price = price
@@ -70,10 +80,13 @@ class Property{
         self.share = share
     }
     
+    //complete initialization
     convenience init(address:String, price:Double, progressPrice:Double, completed:Bool, investors:Int, detail:String, imageURL:String, id: String, share: Int){
         self.init(address:address, price:price, progressPrice:progressPrice, completed:completed, investors: investors, detail:detail, id: id, share:share)
         self.imageURL = imageURL
     }
+    
+    //getter functions
     
     public func getAddress()->String{
         return self.address
@@ -87,11 +100,12 @@ class Property{
         return String(self.investors)
     }
     
-    public func requestDetail(callback: @escaping () -> Any){
+    public func requestDetail(callback: @escaping () -> ()){
         PARequest.getProperty(id: self.id){prop in
             self.detail = prop.getDetail()
             self.latitude = prop.getLatitude()
             self.longitude = prop.getLongitude()
+            callback()
         }
     }
     

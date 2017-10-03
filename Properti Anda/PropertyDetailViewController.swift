@@ -73,6 +73,7 @@ class PropertyDetailViewController: UIViewController {
             emptyView?.alpha = 1.0
             propertyScrollView?.alpha = 0
         }
+        //initialize google map
         let camera = GMSCameraPosition.camera(withLatitude: 4.739001, longitude: -74.059616, zoom: 13)
         myMapView?.camera = camera
         
@@ -105,13 +106,17 @@ class PropertyDetailViewController: UIViewController {
     }
     
     func updateScreen(){
+        //update the UI of the screen
         if self.property == nil {
             return
         }
         SwiftSpinner.show("Requesting details...")
-        self.property?.requestDetail(callback: {
+        //request the detail of the property through a facade
+        self.property?.requestDetail(){_ in
             self.showMoreBtn?.alpha = 1.0
             self.propertyDetail?.attributedText = self.stringFromHtml(string: self.property?.getDetail() ?? "No details provided")
+            
+            //update google map latitude & longitude
             self.myMapView?.animate(toLocation: CLLocationCoordinate2DMake(self.property?.getLatitude() ?? 0, self.property?.getLongitude() ?? 0))
             self.myMapView?.animate(toZoom: 13)
             let marker = GMSMarker()
@@ -120,8 +125,7 @@ class PropertyDetailViewController: UIViewController {
             marker.appearAnimation = .pop
             marker.map = self.myMapView
             SwiftSpinner.hide()
-            return ""
-        })
+        }
         navigationItem.detail = self.property?.getAddress() ?? ""
         self.addressLabel?.text = self.property?.getAddress() ?? "Default Address"
         self.priceLabel?.text = self.property?.getPrice(formatted: true, independent: true) ?? ""
@@ -130,6 +134,7 @@ class PropertyDetailViewController: UIViewController {
         self.propertyImage?.downloadedFrom(link: (self.property?.getImageURL())!)
     }
     
+    //convert the html code into a string
     private func stringFromHtml(string: String) -> NSAttributedString? {
         do {
             let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)

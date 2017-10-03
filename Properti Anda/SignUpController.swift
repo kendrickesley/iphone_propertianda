@@ -37,6 +37,7 @@ class SignUpController: UIViewController {
     }
 
     @IBAction func signUp(sender: Any){
+        //check if for certain validations
         if passwordLabel?.text != passwordConfirmationLabel?.text {
             errorLabel?.isHidden = false
             errorLabel?.text = "Passwords do not match"
@@ -47,12 +48,15 @@ class SignUpController: UIViewController {
             errorLabel?.text = "You haven't fill all the required information"
             return
         }
+        
+        //if validations passed, request through a facade
         errorLabel?.isHidden = true
         SwiftSpinner.show("Singing up...")
         PARequest.register(email: emailLabel?.text ?? "", password: passwordLabel?.text ?? "", firstName: firstNameLabel?.text ?? "", lastName: lastNameLabel?.text ?? "", id_number: idLabel?.text ?? ""){success in
             SwiftSpinner.hide()
             if success {
                 self.errorLabel?.isHidden = true
+                //go back to the login page
                 self.dismiss(animated: true, completion: nil)
             }else{
                 self.errorLabel?.isHidden = false

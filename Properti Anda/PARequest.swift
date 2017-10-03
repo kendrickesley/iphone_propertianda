@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//Basic enum for request facade. See the extensions
 enum PARequest{
 
 }

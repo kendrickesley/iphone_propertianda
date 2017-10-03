@@ -24,11 +24,13 @@ class InvestListViewController: UITableViewController {
         
     }
     
+    //request list of investment on view did appear
     override func viewDidAppear(_ animated:Bool){
         super.viewDidAppear(animated)
         prepareMenuButton()
         prepareNavigationItem()
         SwiftSpinner.show("Requesting Information...")
+        //request through a facade
         investments.requestInvestments(){_ in
             SwiftSpinner.hide()
             DispatchQueue.main.async {
@@ -43,6 +45,7 @@ class InvestListViewController: UITableViewController {
         menuButton.addTarget(self, action: #selector(handleMenuButton), for: .touchUpInside)
     }
     
+    //initialize the toolbar
     fileprivate func prepareNavigationItem() {
         navigationItem.title = "Portfolio"
         navigationItem.detail = "Your Investment"
@@ -61,8 +64,8 @@ class InvestListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         var numOfSections: Int = 0
+        //if there are no investments available, display a placeholder image
         if(self.investments.getAllInvestments().count <= 0){
             let imageName = "noting"
             let image = UIImage(named: imageName)
@@ -81,11 +84,10 @@ class InvestListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.investments.getAllInvestments().count
+        return self.investments.getAllInvestments().count //number of investments in the model
     }
  
-    
+    //method to render each cell which corresponds to a single investment in the investments variable
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell:InvestCell = tableView.dequeueReusableCell(withIdentifier: "InvestCell") as? InvestCell else {return InvestCell()}
         _ = self.investments.getInvestment(byIndex: indexPath.row)

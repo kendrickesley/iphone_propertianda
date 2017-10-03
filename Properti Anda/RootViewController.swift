@@ -20,6 +20,8 @@ class RootViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
         let appState:AppState? = self.appState.getAppState()
+        // if there is a flag in the database that the user has already launched the app, go straight to login
+        // if not, load the intro and change the flag
         if appState != nil && (appState?.has_loaded)! {
             self.performSegue(withIdentifier: "rootLoginSegue", sender: self);
         }else{

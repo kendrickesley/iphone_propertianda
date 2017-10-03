@@ -26,6 +26,7 @@ class LoginController: UIViewController {
         // Do any additional setup after loading the view.
         PARequest.token_login(){success in
             if success{
+                //go to the property list
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = AppNavigationDrawerController(rootViewController: appDelegate.propertySplitViewController, leftViewController: appDelegate.drawerViewController, rightViewController: nil)
             }
@@ -43,6 +44,7 @@ class LoginController: UIViewController {
             SwiftSpinner.hide()
             if success {
                 self.errorLabel?.isHidden = true
+                //go to the property list
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = AppNavigationDrawerController(rootViewController: appDelegate.propertySplitViewController, leftViewController: appDelegate.drawerViewController, rightViewController: nil)
             }else{

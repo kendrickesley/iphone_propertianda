@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//facade to invest
 extension PARequest {
     public static func invest(share:Int, property_id: String, wallet_request: Double, callback: @escaping(_ success: Bool)->()){
         AppStateModel.sharedInstance.getAppStates()
@@ -26,6 +27,7 @@ extension PARequest {
             "mode": "company_buy",
             "wallet_request": wallet_request
         ]
+        //Request to the REST based API with the given parameters
         Alamofire.request("https://propertianda.com/php_dev/market_requester.php", method: .post, parameters: parameters).responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             

@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//Class to manage all the investments
 class Investments{
     var investments:[Investment] = []
     
@@ -20,6 +21,7 @@ class Investments{
     init(){
     }
     
+    //request investments through a facade
     public func requestInvestments(callback: @escaping () -> ()){
         self.investments = []
         PARequest.getInvestments(){invs in
@@ -28,9 +30,12 @@ class Investments{
         }
     }
     
+    //get all investments
     public func getAllInvestments()->[Investment]{
         return investments
     }
+    
+    //get an investment by an index
     public func getInvestment(byIndex:Int)->Investment{
         if byIndex < investments.count {
             return investments[byIndex]
@@ -40,7 +45,9 @@ class Investments{
     }
 }
 
+//class to manage a single investment
 class Investment{
+    //required attributes
     var address:String = ""
     var price:Double = 0
     var imageURL:String = ""
@@ -48,20 +55,27 @@ class Investment{
     var contribution:Double = 0
     
     init(){}
+    
+    //simplest initialization
     init(address:String){
         self.address = address
     }
+    
+    //initialization of property
     init(address:String, price:Double, id:String){
         self.address = address
         self.price = price
         self.id = id
     }
     
+    //complete intialization
     convenience init(address:String, price:Double, imageURL:String, contribution: Double, id: String){
         self.init(address:address, price:price, id: id)
         self.imageURL = imageURL
         self.contribution = contribution
     }
+    
+    //getter functions
     
     public func getAddress()->String{
         return self.address

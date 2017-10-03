@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+
+//Facade to request a single property
 extension PARequest{
     
     public static func getProperty(id: String, callback: @escaping(Property)->()){
@@ -16,6 +18,7 @@ extension PARequest{
             "mode": "detail",
             "propertyid": id
         ]
+        //Request to the REST based API
         Alamofire.request("https://propertianda.com/php_dev/property_requester.php", method: .post, parameters: params).responseJSON { response in
             print("Result: \(response.result)")                         // response serialization result
             var prop = Property()
@@ -27,6 +30,7 @@ extension PARequest{
         }
     }
     
+    //parse the given JSON to a Property object
     private static func parseDetailJson(json: JSON)->Property{
         let properties: JSON = JSON(json["all_row"].arrayValue)
         let prop = Property()

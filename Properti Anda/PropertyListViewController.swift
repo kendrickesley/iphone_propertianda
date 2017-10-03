@@ -22,6 +22,7 @@ class PropertyListViewController: UIViewController {
         propertyTableView.dataSource = self
     }
 
+    //request property list on view did appear
     override func viewDidAppear(_ animated:Bool){
         super.viewDidAppear(animated)
         prepareMenuButton()
@@ -49,6 +50,7 @@ class PropertyListViewController: UIViewController {
         menuButton.addTarget(self, action: #selector(handleMenuButton), for: .touchUpInside)
     }
     
+    //initialize toolbar
     fileprivate func prepareNavigationItem() {
         navigationItem.title = "Properties"
         navigationItem.detail = "Extends your portfolio"
@@ -84,25 +86,25 @@ class PropertyListViewController: UIViewController {
 }
 
 extension PropertyListViewController: UITableViewDelegate{
+    //event binder of table view if it's selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected")
+        //go to property detail screen
         self.performSegue(withIdentifier: "propertySegue", sender: self);
         for cell:PropertyCell in tableView.visibleCells as! [PropertyCell] {
             cell.bar?.backgroundColor = Color.white
         }
         let cell:PropertyCell = tableView.cellForRow(at: indexPath) as! PropertyCell
         cell.bar?.backgroundColor = Color.green.lighten4
-//        let selectedProperty = self.properties.getProperty(byIndex: indexPath.row)
-//        self.delegate?.propertySelected(newProperty: selectedProperty)
-//        splitViewController?.showDetailViewController(appDelegate.propertyDetailViewController, sender: nil)
     }
 }
 
 extension PropertyListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.properties.getAllProperties().count
+        return self.properties.getAllProperties().count //number of properties in the model
     }
     
+    //render each cell of the table which will corresponds to each property in the properties variable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell:PropertyCell = tableView.dequeueReusableCell(withIdentifier: "PropertyCell") as? PropertyCell else {return PropertyCell()}
         let property = self.properties.getProperty(byIndex: indexPath.row)

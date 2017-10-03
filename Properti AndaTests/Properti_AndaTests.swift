@@ -13,6 +13,7 @@ class Properti_AndaTests: XCTestCase {
     
     var vc: RootViewController!
     var properties: Properties!
+    var investments: Investments!
     
     override func setUp() {
         super.setUp()
@@ -20,12 +21,14 @@ class Properti_AndaTests: XCTestCase {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         vc = storyboard.instantiateInitialViewController() as! RootViewController
         properties = Properties()
+        investments = Investments()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+
     
     func testProperties() {
         // This is an example of a functional test case.
@@ -38,6 +41,64 @@ class Properti_AndaTests: XCTestCase {
                 XCTAssert(self.properties.getProperty(byIndex: 0).getDetail().characters.count != 0)
             }
         }
+    }
+    
+    func testRegisterAccount(){
+        let email = randomString(length: 15) + "@" + randomString(length: 5) + "." + randomString(length: 3)
+        let password = randomString(length: 15)
+        PARequest.register(email: email, password: password, firstName: "Kendrick", lastName: "Kesley", id_number: "123123"){success in
+            XCTAssertFalse(success)
+            PARequest.login(email: email, password:password){success in
+                XCTAssertTrue(success)
+            }
+        }
+    }
+    
+    func testRegisterDuplicateAccount(){
+        PARequest.register(email: "s3642811@student.rmit.edu.au", password: "kendrick", firstName: "Kendrick", lastName: "Kesley", id_number: "123123"){success in
+            XCTAssertFalse(success)
+        }
+    }
+    
+    func testLogin(){
+        let email = randomString(length: 15) + "@" + randomString(length: 5) + "." + randomString(length: 3)
+        let password = randomString(length: 15)
+        PARequest.login(email: email, password: password){success in
+            XCTAssertFalse(success)
+        }
+        PARequest.login(email: "s3642811@student.rmit.edu.au", password:"kendrick"){success in
+            XCTAssertTrue(success)
+        }
+    }
+    
+    func testInvestments(){
+        XCTAssert(investments.getAllInvestments().count == 0)
+        PARequest.login(email: "s3642811@student.rmit.edu.au", password:"kendrick"){success in
+            XCTAssert(success)
+            if success {
+                self.investments.requestInvestments() {
+                    let investments:[Investment] = self.investments.getAllInvestments()
+                    XCTAssert(investments.count != 0)
+                }
+            }
+        }
+        
+    }
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
     }
     
     
